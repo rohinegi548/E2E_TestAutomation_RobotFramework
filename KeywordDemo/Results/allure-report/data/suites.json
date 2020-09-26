@@ -1,0 +1,103 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Full Regression",
+    "children" : [ {
+      "name" : "Demo",
+      "children" : [ {
+        "name" : "TEST CASE1",
+        "uid" : "db7f6f5e31e1b5f4",
+        "parentUid" : "46f85b597c4ebbf8584c0ac0509c13a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001436744,
+          "stop" : 1597001436758,
+          "duration" : 14
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TEST CASE2",
+        "uid" : "efb98c843a9a09ec",
+        "parentUid" : "46f85b597c4ebbf8584c0ac0509c13a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001436763,
+          "stop" : 1597001436781,
+          "duration" : 18
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "46f85b597c4ebbf8584c0ac0509c13a0"
+    }, {
+      "name" : "SauceDemoWithKeywordsFromExternalFile",
+      "children" : [ {
+        "name" : "Verify E2E Product Order Flow For A Valid User",
+        "uid" : "b29f80fcc8b61955",
+        "parentUid" : "7fc26f53f05d8e09da65ee9ea96341e6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001437055,
+          "stop" : 1597001455052,
+          "duration" : 17997
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7fc26f53f05d8e09da65ee9ea96341e6"
+    }, {
+      "name" : "SauceDemoWithoutKeywordsFromExternalFile",
+      "children" : [ {
+        "name" : "Verify E2E Product Order Flow For A Valid User",
+        "uid" : "d44fefe65faebf12",
+        "parentUid" : "223184f43bcc3d777adc29ab7558cdc3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001455076,
+          "stop" : 1597001467129,
+          "duration" : 12053
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "223184f43bcc3d777adc29ab7558cdc3"
+    }, {
+      "name" : "SauceDemoWorkingWithTestSetupTeardown",
+      "children" : [ {
+        "name" : "Verify An Invalid User Is Not Able To Login",
+        "uid" : "8fe35e9f01eeebb3",
+        "parentUid" : "f0c6f7bbba6c554eac8beebbd87dab90",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001468368,
+          "stop" : 1597001478740,
+          "duration" : 10372
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Verify E2E Product Order Flow For A Valid User",
+        "uid" : "48974b2d2ce37848",
+        "parentUid" : "f0c6f7bbba6c554eac8beebbd87dab90",
+        "status" : "passed",
+        "time" : {
+          "start" : 1597001478745,
+          "stop" : 1597001495592,
+          "duration" : 16847
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f0c6f7bbba6c554eac8beebbd87dab90"
+    } ],
+    "uid" : "0f6a2b9717402f336bc803a31ee424ec"
+  } ]
+}

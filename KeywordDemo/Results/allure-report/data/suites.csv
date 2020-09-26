@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 10 01:00:37 IST 2020","Mon Aug 10 01:00:55 IST 2020","17997","","Full Regression","SauceDemoWithKeywordsFromExternalFile","","","Verify E2E Product Order Flow For A Valid User","E2E Product Order Flow For A Valid User"
+"passed","Mon Aug 10 01:00:36 IST 2020","Mon Aug 10 01:00:36 IST 2020","18","","Full Regression","Demo","","","TEST CASE2","TC2 DOCUMENTATION"
+"passed","Mon Aug 10 01:01:08 IST 2020","Mon Aug 10 01:01:18 IST 2020","10372","","Full Regression","SauceDemoWorkingWithTestSetupTeardown","","","Verify An Invalid User Is Not Able To Login","Verification of Negative Testing Scenario For Login"
+"passed","Mon Aug 10 01:01:18 IST 2020","Mon Aug 10 01:01:35 IST 2020","16847","","Full Regression","SauceDemoWorkingWithTestSetupTeardown","","","Verify E2E Product Order Flow For A Valid User","E2E Product Order Flow For A Valid User"
+"passed","Mon Aug 10 01:00:36 IST 2020","Mon Aug 10 01:00:36 IST 2020","14","","Full Regression","Demo","","","TEST CASE1","TC1 DOCUMENTATION"
+"passed","Mon Aug 10 01:00:55 IST 2020","Mon Aug 10 01:01:07 IST 2020","12053","","Full Regression","SauceDemoWithoutKeywordsFromExternalFile","","","Verify E2E Product Order Flow For A Valid User","E2E Product Order Flow For A Valid User"

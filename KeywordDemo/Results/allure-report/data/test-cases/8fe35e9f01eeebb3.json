@@ -1,0 +1,305 @@
+{
+  "uid" : "8fe35e9f01eeebb3",
+  "name" : "Verify An Invalid User Is Not Able To Login",
+  "fullName" : "Full Regression.SauceDemoWorkingWithTestSetupTeardown.Verify An Invalid User Is Not Able To Login",
+  "historyId" : "c235125df4e7ed3c4d0b81ebadf09ec0",
+  "time" : {
+    "start" : 1597001468368,
+    "stop" : 1597001478740,
+    "duration" : 10372
+  },
+  "description" : "Verification of Negative Testing Scenario For Login",
+  "descriptionHtml" : "<p>Verification of Negative Testing Scenario For Login</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "Common.Begin Web Test",
+    "time" : {
+      "start" : 1597001468369,
+      "stop" : 1597001475753,
+      "duration" : 7384
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Open Browser",
+      "time" : {
+        "start" : 1597001468370,
+        "stop" : 1597001473555,
+        "duration" : 5185
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a382a35d054148f1",
+        "name" : "Keyword Log",
+        "source" : "a382a35d054148f1.html",
+        "type" : "text/html",
+        "size" : 1634
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "https://www.saucedemo.com"
+      }, {
+        "name" : "arg2",
+        "value" : "gc"
+      } ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "SeleniumLibrary.Maximize Browser Window",
+      "time" : {
+        "start" : 1597001473555,
+        "stop" : 1597001475747,
+        "duration" : 2192
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "de4a2011d1b60eab",
+        "name" : "Keyword Log",
+        "source" : "de4a2011d1b60eab.html",
+        "type" : "text/html",
+        "size" : 343
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "42e11a5d53c505ab",
+      "name" : "Keyword Log",
+      "source" : "42e11a5d53c505ab.html",
+      "type" : "text/html",
+      "size" : 71
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 2,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Verification of Negative Testing Scenario For Login",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SaucedemoUI.Login As An Invalid User",
+      "time" : {
+        "start" : 1597001475759,
+        "stop" : 1597001476383,
+        "duration" : 624
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Input Text",
+        "time" : {
+          "start" : 1597001475760,
+          "stop" : 1597001475930,
+          "duration" : 170
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "adfabaf952e1ecbb",
+          "name" : "Keyword Log",
+          "source" : "adfabaf952e1ecbb.html",
+          "type" : "text/html",
+          "size" : 1304
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=user-name"
+        }, {
+          "name" : "arg2",
+          "value" : "${inv_user}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Input Password",
+        "time" : {
+          "start" : 1597001475931,
+          "stop" : 1597001476066,
+          "duration" : 135
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f46a94510b1a9af1",
+          "name" : "Keyword Log",
+          "source" : "f46a94510b1a9af1.html",
+          "type" : "text/html",
+          "size" : 1297
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=password"
+        }, {
+          "name" : "arg2",
+          "value" : "${inv_passwd}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Press Keys",
+        "time" : {
+          "start" : 1597001476067,
+          "stop" : 1597001476361,
+          "duration" : 294
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "637559baed787fb0",
+          "name" : "Keyword Log",
+          "source" : "637559baed787fb0.html",
+          "type" : "text/html",
+          "size" : 1437
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=password"
+        }, {
+          "name" : "arg2",
+          "value" : "RETURN"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001476362,
+          "stop" : 1597001476382,
+          "duration" : 20
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "abfdc3cb31ae20e8",
+          "name" : "Keyword Log",
+          "source" : "abfdc3cb31ae20e8.html",
+          "type" : "text/html",
+          "size" : 499
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Username and password do not match any user in this service"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "fc65e26ac73ecdde",
+        "name" : "Keyword Log",
+        "source" : "fc65e26ac73ecdde.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 5,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "Common.End Web Test",
+    "time" : {
+      "start" : 1597001476385,
+      "stop" : 1597001478739,
+      "duration" : 2354
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Close Browser",
+      "time" : {
+        "start" : 1597001476385,
+        "stop" : 1597001478738,
+        "duration" : 2353
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f94d5f113fc004ee",
+        "name" : "Keyword Log",
+        "source" : "f94d5f113fc004ee.html",
+        "type" : "text/html",
+        "size" : 402
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "8826a2dc37cb908f",
+      "name" : "Keyword Log",
+      "source" : "8826a2dc37cb908f.html",
+      "type" : "text/html",
+      "size" : 71
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Full Regression"
+  }, {
+    "name" : "subSuite",
+    "value" : "SauceDemoWorkingWithTestSetupTeardown"
+  }, {
+    "name" : "tag",
+    "value" : "NegativeScenario"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "A303598"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "NegativeScenario" ]
+  },
+  "source" : "8fe35e9f01eeebb3.json",
+  "parameterValues" : [ ]
+}

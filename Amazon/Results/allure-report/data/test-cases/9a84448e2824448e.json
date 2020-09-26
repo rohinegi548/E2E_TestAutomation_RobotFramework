@@ -1,0 +1,223 @@
+{
+  "uid" : "9a84448e2824448e",
+  "name" : "Login with Correct Credentials",
+  "fullName" : "Full Regression.Amazon2.Login with Correct Credentials",
+  "historyId" : "dcfcd8b878dcdae1d8f8372fd19f2de2",
+  "time" : {
+    "start" : 1596221433344,
+    "stop" : 1596221434969,
+    "duration" : 1625
+  },
+  "description" : "User should be able to login successfully",
+  "descriptionHtml" : "<p>User should be able to login successfully</p>\n",
+  "status" : "passed",
+  "statusTrace" : "Traceback (most recent call last):\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\__init__.py\", line 372, in run_keyword\n    return DynamicCore.run_keyword(self, name, args, kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\robotlibcore.py\", line 102, in run_keyword\n    return self.keywords[name](*args, **kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\keywords\\element.py\", line 549, in click_image\n    element = self.find_element(locator, tag='input')\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\context.py\", line 62, in find_element\n    return self.element_finder.find(locator, tag, True, required, parent)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\locators\\elementfinder.py\", line 76, in find\n    % (element_type, locator))",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "User should be able to login successfully",
+    "status" : "passed",
+    "statusTrace" : "Traceback (most recent call last):\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\__init__.py\", line 372, in run_keyword\n    return DynamicCore.run_keyword(self, name, args, kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\robotlibcore.py\", line 102, in run_keyword\n    return self.keywords[name](*args, **kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\keywords\\element.py\", line 549, in click_image\n    element = self.find_element(locator, tag='input')\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\context.py\", line 62, in find_element\n    return self.element_finder.find(locator, tag, True, required, parent)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\locators\\elementfinder.py\", line 76, in find\n    % (element_type, locator))",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Input Text",
+      "time" : {
+        "start" : 1596221433345,
+        "stop" : 1596221433429,
+        "duration" : 84
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7bdaf296469eb2b0",
+        "name" : "Keyword Log",
+        "source" : "7bdaf296469eb2b0.html",
+        "type" : "text/html",
+        "size" : 1392
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "id=user-name"
+      }, {
+        "name" : "arg2",
+        "value" : "${username}"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "SeleniumLibrary.Input Password",
+      "time" : {
+        "start" : 1596221433430,
+        "stop" : 1596221433490,
+        "duration" : 60
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "33d48b01e0be8c4c",
+        "name" : "Keyword Log",
+        "source" : "33d48b01e0be8c4c.html",
+        "type" : "text/html",
+        "size" : 1370
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "id=password"
+      }, {
+        "name" : "arg2",
+        "value" : "${password}"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "SeleniumLibrary.Press Keys",
+      "time" : {
+        "start" : 1596221433491,
+        "stop" : 1596221433803,
+        "duration" : 312
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "85c5602a8d1e44de",
+        "name" : "Keyword Log",
+        "source" : "85c5602a8d1e44de.html",
+        "type" : "text/html",
+        "size" : 1453
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "id=password"
+      }, {
+        "name" : "arg2",
+        "value" : "RETURN"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "SeleniumLibrary.Wait Until Page Contains",
+      "time" : {
+        "start" : 1596221433804,
+        "stop" : 1596221434942,
+        "duration" : 1138
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "bcd7dde241ff70ef",
+        "name" : "Keyword Log",
+        "source" : "bcd7dde241ff70ef.html",
+        "type" : "text/html",
+        "size" : 2020
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Products"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "${curr_url} = SeleniumLibrary.Get Location",
+      "time" : {
+        "start" : 1596221434944,
+        "stop" : 1596221434965,
+        "duration" : 21
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5cb1b4fb9ea341e0",
+        "name" : "Keyword Log",
+        "source" : "5cb1b4fb9ea341e0.html",
+        "type" : "text/html",
+        "size" : 438
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "BuiltIn.Should Contain",
+      "time" : {
+        "start" : 1596221434965,
+        "stop" : 1596221434967,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "fb69e96d43c922fd",
+        "name" : "Keyword Log",
+        "source" : "fb69e96d43c922fd.html",
+        "type" : "text/html",
+        "size" : 127
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${curr_url}"
+      }, {
+        "name" : "arg2",
+        "value" : "inventory"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 6
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Full Regression"
+  }, {
+    "name" : "subSuite",
+    "value" : "Amazon2"
+  }, {
+    "name" : "tag",
+    "value" : "Login"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "A303598"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "Login" ]
+  },
+  "source" : "9a84448e2824448e.json",
+  "parameterValues" : [ ]
+}

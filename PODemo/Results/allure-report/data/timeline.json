@@ -1,0 +1,38 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "A303598",
+    "children" : [ {
+      "children" : [ {
+        "name" : "Verify E2E Product Order Flow For A Valid User",
+        "uid" : "49eadecbc0af8162",
+        "parentUid" : "a165c6414b40e427dca0c2346ce2ef6c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1596304767197,
+          "stop" : 1596304785554,
+          "duration" : 18357
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Verify An Invalid User Is Not Able To Login",
+        "uid" : "70c5c22e9fbfafc1",
+        "parentUid" : "a165c6414b40e427dca0c2346ce2ef6c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1596304758171,
+          "stop" : 1596304767197,
+          "duration" : 9026
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a165c6414b40e427dca0c2346ce2ef6c"
+    } ],
+    "uid" : "45efc42aac03b57c24e5e80240b97668"
+  } ]
+}

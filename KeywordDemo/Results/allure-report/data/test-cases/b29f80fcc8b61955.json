@@ -1,0 +1,1079 @@
+{
+  "uid" : "b29f80fcc8b61955",
+  "name" : "Verify E2E Product Order Flow For A Valid User",
+  "fullName" : "Full Regression.SauceDemoWithKeywordsFromExternalFile.Verify E2E Product Order Flow For A Valid User",
+  "historyId" : "e22241b5ccfebc0ff57fb50394353fc5",
+  "time" : {
+    "start" : 1597001437055,
+    "stop" : 1597001455052,
+    "duration" : 17997
+  },
+  "description" : "E2E Product Order Flow For A Valid User",
+  "descriptionHtml" : "<p>E2E Product Order Flow For A Valid User</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "E2E Product Order Flow For A Valid User",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Common.Begin Web Test",
+      "time" : {
+        "start" : 1597001437055,
+        "stop" : 1597001444707,
+        "duration" : 7652
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Open Browser",
+        "time" : {
+          "start" : 1597001437056,
+          "stop" : 1597001442395,
+          "duration" : 5339
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "816e1586a187477f",
+          "name" : "Keyword Log",
+          "source" : "816e1586a187477f.html",
+          "type" : "text/html",
+          "size" : 1634
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "https://www.saucedemo.com"
+        }, {
+          "name" : "arg2",
+          "value" : "gc"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Maximize Browser Window",
+        "time" : {
+          "start" : 1597001442395,
+          "stop" : 1597001444705,
+          "duration" : 2310
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b650cab17cb32177",
+          "name" : "Keyword Log",
+          "source" : "b650cab17cb32177.html",
+          "type" : "text/html",
+          "size" : 343
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "de6d8364edb4c85",
+        "name" : "Keyword Log",
+        "source" : "de6d8364edb4c85.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Title Of The Landed Page",
+      "time" : {
+        "start" : 1597001444708,
+        "stop" : 1597001444727,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "${title} = SeleniumLibrary.Get Title",
+        "time" : {
+          "start" : 1597001444709,
+          "stop" : 1597001444725,
+          "duration" : 16
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1997aadf48232237",
+          "name" : "Keyword Log",
+          "source" : "1997aadf48232237.html",
+          "type" : "text/html",
+          "size" : 369
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "BuiltIn.Should Contain",
+        "time" : {
+          "start" : 1597001444725,
+          "stop" : 1597001444726,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "83a9cd3b554ae40a",
+          "name" : "Keyword Log",
+          "source" : "83a9cd3b554ae40a.html",
+          "type" : "text/html",
+          "size" : 110
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${title}"
+        }, {
+          "name" : "arg2",
+          "value" : "Swag"
+        }, {
+          "name" : "arg3",
+          "value" : "ignore_case=True"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "8286622351c4830e",
+        "name" : "Keyword Log",
+        "source" : "8286622351c4830e.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Login As A Valid User",
+      "time" : {
+        "start" : 1597001444728,
+        "stop" : 1597001447494,
+        "duration" : 2766
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Input Text",
+        "time" : {
+          "start" : 1597001444729,
+          "stop" : 1597001444888,
+          "duration" : 159
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "fc2adff786759f7e",
+          "name" : "Keyword Log",
+          "source" : "fc2adff786759f7e.html",
+          "type" : "text/html",
+          "size" : 1368
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=user-name"
+        }, {
+          "name" : "arg2",
+          "value" : "${username}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Input Password",
+        "time" : {
+          "start" : 1597001444889,
+          "stop" : 1597001445046,
+          "duration" : 157
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a28952b88543c81a",
+          "name" : "Keyword Log",
+          "source" : "a28952b88543c81a.html",
+          "type" : "text/html",
+          "size" : 1346
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=password"
+        }, {
+          "name" : "arg2",
+          "value" : "${password}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Press Keys",
+        "time" : {
+          "start" : 1597001445047,
+          "stop" : 1597001447464,
+          "duration" : 2417
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7b25d7c1ffbf457b",
+          "name" : "Keyword Log",
+          "source" : "7b25d7c1ffbf457b.html",
+          "type" : "text/html",
+          "size" : 1437
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=password"
+        }, {
+          "name" : "arg2",
+          "value" : "RETURN"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001447465,
+          "stop" : 1597001447493,
+          "duration" : 28
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5ecb406fa6f05f4d",
+          "name" : "Keyword Log",
+          "source" : "5ecb406fa6f05f4d.html",
+          "type" : "text/html",
+          "size" : 397
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Products"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "17dbef6ba605adfb",
+        "name" : "Keyword Log",
+        "source" : "17dbef6ba605adfb.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 5,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Logged In Successfully",
+      "time" : {
+        "start" : 1597001447495,
+        "stop" : 1597001447509,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "${curr_url} = SeleniumLibrary.Get Location",
+        "time" : {
+          "start" : 1597001447496,
+          "stop" : 1597001447505,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "96a41bfaaf971900",
+          "name" : "Keyword Log",
+          "source" : "96a41bfaaf971900.html",
+          "type" : "text/html",
+          "size" : 430
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "BuiltIn.Should Contain",
+        "time" : {
+          "start" : 1597001447506,
+          "stop" : 1597001447507,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "79037e8ccbffdc12",
+          "name" : "Keyword Log",
+          "source" : "79037e8ccbffdc12.html",
+          "type" : "text/html",
+          "size" : 127
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${curr_url}"
+        }, {
+          "name" : "arg2",
+          "value" : "inventory"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "199fda4f37512c19",
+        "name" : "Keyword Log",
+        "source" : "199fda4f37512c19.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Select An Item And ADD It To The Cart",
+      "time" : {
+        "start" : 1597001447510,
+        "stop" : 1597001448544,
+        "duration" : 1034
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Click Button",
+        "time" : {
+          "start" : 1597001447511,
+          "stop" : 1597001447644,
+          "duration" : 133
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "75072bc8390216c5",
+          "name" : "Keyword Log",
+          "source" : "75072bc8390216c5.html",
+          "type" : "text/html",
+          "size" : 1624
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "ADD TO CART"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Click Element",
+        "time" : {
+          "start" : 1597001447645,
+          "stop" : 1597001448542,
+          "duration" : 897
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "83e194176d62f4f7",
+          "name" : "Keyword Log",
+          "source" : "83e194176d62f4f7.html",
+          "type" : "text/html",
+          "size" : 909
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "xpath=//*[@id=\"shopping_cart_container\"]/a"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "fe69c19442a70a53",
+        "name" : "Keyword Log",
+        "source" : "fe69c19442a70a53.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Cart Page Gets Loaded",
+      "time" : {
+        "start" : 1597001448545,
+        "stop" : 1597001448606,
+        "duration" : 61
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001448548,
+          "stop" : 1597001448580,
+          "duration" : 32
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "45babc1c604847e5",
+          "name" : "Keyword Log",
+          "source" : "45babc1c604847e5.html",
+          "type" : "text/html",
+          "size" : 393
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "REMOVE"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Page Should Contain",
+        "time" : {
+          "start" : 1597001448580,
+          "stop" : 1597001448605,
+          "duration" : 25
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a393b0c84dacb024",
+          "name" : "Keyword Log",
+          "source" : "a393b0c84dacb024.html",
+          "type" : "text/html",
+          "size" : 718
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "CHECKOUT"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "950a80b93e5fd101",
+        "name" : "Keyword Log",
+        "source" : "950a80b93e5fd101.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Proceed To Checkout & Verify Checkout Page Loaded",
+      "time" : {
+        "start" : 1597001448606,
+        "stop" : 1597001449196,
+        "duration" : 590
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Click Element",
+        "time" : {
+          "start" : 1597001448607,
+          "stop" : 1597001449159,
+          "duration" : 552
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "3100b91bd136bb03",
+          "name" : "Keyword Log",
+          "source" : "3100b91bd136bb03.html",
+          "type" : "text/html",
+          "size" : 951
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "xpath=//*[@id=\"cart_contents_container\"]/div/div[2]/a[2]"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001449159,
+          "stop" : 1597001449194,
+          "duration" : 35
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "3699a9c7ca3e0022",
+          "name" : "Keyword Log",
+          "source" : "3699a9c7ca3e0022.html",
+          "type" : "text/html",
+          "size" : 433
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Checkout: Your Information"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "407ab859372f6a9c",
+        "name" : "Keyword Log",
+        "source" : "407ab859372f6a9c.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Enter Shipping Details & Continue",
+      "time" : {
+        "start" : 1597001449198,
+        "stop" : 1597001450239,
+        "duration" : 1041
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Input Text",
+        "time" : {
+          "start" : 1597001449201,
+          "stop" : 1597001449330,
+          "duration" : 129
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7ca45e83a14b3c91",
+          "name" : "Keyword Log",
+          "source" : "7ca45e83a14b3c91.html",
+          "type" : "text/html",
+          "size" : 1299
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=first-name"
+        }, {
+          "name" : "arg2",
+          "value" : "${firstname}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Input Text",
+        "time" : {
+          "start" : 1597001449331,
+          "stop" : 1597001449474,
+          "duration" : 143
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "852ee4cd52005723",
+          "name" : "Keyword Log",
+          "source" : "852ee4cd52005723.html",
+          "type" : "text/html",
+          "size" : 1304
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=last-name"
+        }, {
+          "name" : "arg2",
+          "value" : "${lastname}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Input Text",
+        "time" : {
+          "start" : 1597001449474,
+          "stop" : 1597001449614,
+          "duration" : 140
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "4b5d636bbc104429",
+          "name" : "Keyword Log",
+          "source" : "4b5d636bbc104429.html",
+          "type" : "text/html",
+          "size" : 1318
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "id=postal-code"
+        }, {
+          "name" : "arg2",
+          "value" : "${postalcode}"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Click Button",
+        "time" : {
+          "start" : 1597001449615,
+          "stop" : 1597001450227,
+          "duration" : 612
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "69584fd350ae165d",
+          "name" : "Keyword Log",
+          "source" : "69584fd350ae165d.html",
+          "type" : "text/html",
+          "size" : 1178
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "CONTINUE"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "e5d37e53262168ba",
+        "name" : "Keyword Log",
+        "source" : "e5d37e53262168ba.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 5,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Checkout:Overview Page Loaded & Continue To Place Order",
+      "time" : {
+        "start" : 1597001450244,
+        "stop" : 1597001451585,
+        "duration" : 1341
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001450247,
+          "stop" : 1597001450272,
+          "duration" : 25
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9a59a32ebc5a1225",
+          "name" : "Keyword Log",
+          "source" : "9a59a32ebc5a1225.html",
+          "type" : "text/html",
+          "size" : 417
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Checkout: Overview"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Click Element",
+        "time" : {
+          "start" : 1597001450273,
+          "stop" : 1597001451582,
+          "duration" : 1309
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "2cc65928ed7bffd3",
+          "name" : "Keyword Log",
+          "source" : "2cc65928ed7bffd3.html",
+          "type" : "text/html",
+          "size" : 981
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "xpath=//*[@id=\"checkout_summary_container\"]/div/div[2]/div[8]/a[2]"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "d3f2be3fd6fa2947",
+        "name" : "Keyword Log",
+        "source" : "d3f2be3fd6fa2947.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Order Confirmation Page Loaded",
+      "time" : {
+        "start" : 1597001451588,
+        "stop" : 1597001451656,
+        "duration" : 68
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Wait Until Page Contains",
+        "time" : {
+          "start" : 1597001451590,
+          "stop" : 1597001451613,
+          "duration" : 23
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b72e0f064b1a0304",
+          "name" : "Keyword Log",
+          "source" : "b72e0f064b1a0304.html",
+          "type" : "text/html",
+          "size" : 429
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "THANK YOU FOR YOUR ORDER"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Page Should Contain",
+        "time" : {
+          "start" : 1597001451614,
+          "stop" : 1597001451655,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d2e2e26b7b65ff78",
+          "name" : "Keyword Log",
+          "source" : "d2e2e26b7b65ff78.html",
+          "type" : "text/html",
+          "size" : 835
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Your order has been dispatched, and will arrive"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "c40885f6e9ba0bb4",
+        "name" : "Keyword Log",
+        "source" : "c40885f6e9ba0bb4.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Logout From The SauceDemo Website",
+      "time" : {
+        "start" : 1597001451657,
+        "stop" : 1597001452647,
+        "duration" : 990
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Click Button",
+        "time" : {
+          "start" : 1597001451658,
+          "stop" : 1597001451738,
+          "duration" : 80
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7e8dca067503db77",
+          "name" : "Keyword Log",
+          "source" : "7e8dca067503db77.html",
+          "type" : "text/html",
+          "size" : 1601
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "Open Menu"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Wait Until Element Is Visible",
+        "time" : {
+          "start" : 1597001451739,
+          "stop" : 1597001452038,
+          "duration" : 299
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "90b82b5e20532694",
+          "name" : "Keyword Log",
+          "source" : "90b82b5e20532694.html",
+          "type" : "text/html",
+          "size" : 92594
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "logout_sidebar_link"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "SeleniumLibrary.Click Link",
+        "time" : {
+          "start" : 1597001452041,
+          "stop" : 1597001452644,
+          "duration" : 603
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "bbc9b7e3687fe77f",
+          "name" : "Keyword Log",
+          "source" : "bbc9b7e3687fe77f.html",
+          "type" : "text/html",
+          "size" : 1288
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "logout_sidebar_link"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "9bf028ad4f5d7020",
+        "name" : "Keyword Log",
+        "source" : "9bf028ad4f5d7020.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 4,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "SaucedemoUI.Verify Logout Successfully",
+      "time" : {
+        "start" : 1597001452657,
+        "stop" : 1597001452676,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "${main_url} = SeleniumLibrary.Get Location",
+        "time" : {
+          "start" : 1597001452660,
+          "stop" : 1597001452672,
+          "duration" : 12
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "693458885523fc9c",
+          "name" : "Keyword Log",
+          "source" : "693458885523fc9c.html",
+          "type" : "text/html",
+          "size" : 422
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "BuiltIn.Should Be Equal As Strings",
+        "time" : {
+          "start" : 1597001452672,
+          "stop" : 1597001452675,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "fe22e797a01a3da7",
+          "name" : "Keyword Log",
+          "source" : "fe22e797a01a3da7.html",
+          "type" : "text/html",
+          "size" : 231
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${main_url}"
+        }, {
+          "name" : "arg2",
+          "value" : "https://www.saucedemo.com/index.html"
+        } ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "c59fb8a4146b3f69",
+        "name" : "Keyword Log",
+        "source" : "c59fb8a4146b3f69.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "Common.End Web Test",
+      "time" : {
+        "start" : 1597001452677,
+        "stop" : 1597001455051,
+        "duration" : 2374
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SeleniumLibrary.Close Browser",
+        "time" : {
+          "start" : 1597001452677,
+          "stop" : 1597001455050,
+          "duration" : 2373
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "63489864244febe9",
+          "name" : "Keyword Log",
+          "source" : "63489864244febe9.html",
+          "type" : "text/html",
+          "size" : 402
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "8be0707b93e69683",
+        "name" : "Keyword Log",
+        "source" : "8be0707b93e69683.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 43,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 43,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Full Regression"
+  }, {
+    "name" : "subSuite",
+    "value" : "SauceDemoWithKeywordsFromExternalFile"
+  }, {
+    "name" : "tag",
+    "value" : "Smoke"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "A303598"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "Smoke" ]
+  },
+  "source" : "b29f80fcc8b61955.json",
+  "parameterValues" : [ ]
+}

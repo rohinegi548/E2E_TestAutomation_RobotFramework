@@ -1,0 +1,35 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "SauceDemo",
+    "children" : [ {
+      "name" : "Verify An Invalid User Is Not Able To Login",
+      "uid" : "70c5c22e9fbfafc1",
+      "parentUid" : "2301cf51c98d81b497316df64c1aff29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596304758171,
+        "stop" : 1596304767197,
+        "duration" : 9026
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify E2E Product Order Flow For A Valid User",
+      "uid" : "49eadecbc0af8162",
+      "parentUid" : "2301cf51c98d81b497316df64c1aff29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596304767197,
+        "stop" : 1596304785554,
+        "duration" : 18357
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2301cf51c98d81b497316df64c1aff29"
+  } ]
+}

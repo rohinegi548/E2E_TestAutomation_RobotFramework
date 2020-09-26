@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20190825 16:54:49.842" rpa="false">
+<suite id="s1" name="Tests" source="C:\deveopment\robot-scripts\first-script\tests">
+<suite id="s1-s1" name="Amazon" source="C:\deveopment\robot-scripts\first-script\tests\amazon.robot">
+<test id="s1-s1-t1" name="Login with FSE User">
+<kw name="Open WebURL in Browser" type="setup">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='ie'</arg>
+<arg>Run ie Browser</arg>
+</arguments>
+<status status="PASS" starttime="20190825 16:54:50.900" endtime="20190825 16:54:50.902"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='gc'</arg>
+<arg>Run chrome Browser</arg>
+</arguments>
+<kw name="Run chrome Browser">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190825 16:54:50.904" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000293B7F66160&gt;</msg>
+<status status="PASS" starttime="20190825 16:54:50.903" endtime="20190825 16:54:50.904"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+</arguments>
+<status status="PASS" starttime="20190825 16:54:50.904" endtime="20190825 16:54:50.905"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20190825 16:54:50.905" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20190825 16:54:50.905" endtime="20190825 16:54:57.331"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://qa-quality.mylam.com</arg>
+</arguments>
+<msg timestamp="20190825 16:54:57.331" level="INFO">Opening url 'http://qa-quality.mylam.com'</msg>
+<status status="PASS" starttime="20190825 16:54:57.331" endtime="20190825 16:55:06.048"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:54:50.903" endtime="20190825 16:55:06.048"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:54:50.902" endtime="20190825 16:55:06.048"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:54:50.900" endtime="20190825 16:55:06.049"></status>
+</kw>
+<kw name="Verfification for FSEs/Non-FSEs login functionalities">
+<arguments>
+<arg>${fse_user}</arg>
+<arg>${fse_passwd}</arg>
+</arguments>
+<kw name="Input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=userNameInput</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190825 16:55:06.058" level="INFO">Typing text 'qmlasmtestuser2' into text field 'id=userNameInput'.</msg>
+<status status="PASS" starttime="20190825 16:55:06.057" endtime="20190825 16:55:06.369"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:06.052" endtime="20190825 16:55:06.370"></status>
+</kw>
+<kw name="Input passwd">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=passwordInput</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190825 16:55:06.372" level="INFO">Typing password into text field 'id=passwordInput'.</msg>
+<status status="PASS" starttime="20190825 16:55:06.371" endtime="20190825 16:55:06.619"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:06.370" endtime="20190825 16:55:06.620"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=submitButton</arg>
+</arguments>
+<msg timestamp="20190825 16:55:06.620" level="INFO">Clicking element 'id=submitButton'.</msg>
+<status status="PASS" starttime="20190825 16:55:06.620" endtime="20190825 16:55:07.491"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=CertificateAuthentication</arg>
+</arguments>
+<msg timestamp="20190825 16:55:07.493" level="INFO">Clicking element 'id=CertificateAuthentication'.</msg>
+<status status="PASS" starttime="20190825 16:55:07.492" endtime="20190825 16:55:11.913"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=iQMSNumberId</arg>
+<arg>6779</arg>
+</arguments>
+<msg timestamp="20190825 16:55:11.913" level="INFO">Typing text '6779' into text field 'id=iQMSNumberId'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190825 16:55:12.681" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190825 16:55:11.958" endtime="20190825 16:55:12.681"></status>
+</kw>
+<msg timestamp="20190825 16:55:12.749" level="FAIL">Element with locator 'id=iQMSNumberId' not found.</msg>
+<status status="FAIL" starttime="20190825 16:55:11.913" endtime="20190825 16:55:12.749"></status>
+</kw>
+<status status="FAIL" starttime="20190825 16:55:06.052" endtime="20190825 16:55:12.750"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190825 16:55:12.750" endtime="20190825 16:55:15.968"></status>
+</kw>
+<status status="FAIL" starttime="20190825 16:54:50.896" endtime="20190825 16:55:15.969" critical="yes">Element with locator 'id=iQMSNumberId' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Login with Non-FSE User">
+<kw name="Open WebURL in Browser" type="setup">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='ie'</arg>
+<arg>Run ie Browser</arg>
+</arguments>
+<status status="PASS" starttime="20190825 16:55:15.979" endtime="20190825 16:55:15.980"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='gc'</arg>
+<arg>Run chrome Browser</arg>
+</arguments>
+<kw name="Run chrome Browser">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190825 16:55:15.982" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000293B7FB4FD0&gt;</msg>
+<status status="PASS" starttime="20190825 16:55:15.981" endtime="20190825 16:55:15.982"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+</arguments>
+<status status="PASS" starttime="20190825 16:55:15.982" endtime="20190825 16:55:15.982"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20190825 16:55:15.982" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20190825 16:55:15.982" endtime="20190825 16:55:20.072"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://qa-quality.mylam.com</arg>
+</arguments>
+<msg timestamp="20190825 16:55:20.073" level="INFO">Opening url 'http://qa-quality.mylam.com'</msg>
+<status status="PASS" starttime="20190825 16:55:20.072" endtime="20190825 16:55:29.654"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:15.981" endtime="20190825 16:55:29.654"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:15.980" endtime="20190825 16:55:29.654"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:15.978" endtime="20190825 16:55:29.655"></status>
+</kw>
+<kw name="Verfification for FSEs/Non-FSEs login functionalities">
+<arguments>
+<arg>${nonfse_user}</arg>
+<arg>${nonfse_passwd}</arg>
+</arguments>
+<kw name="Input username">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=userNameInput</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190825 16:55:29.662" level="INFO">Typing text 'negiro' into text field 'id=userNameInput'.</msg>
+<status status="PASS" starttime="20190825 16:55:29.661" endtime="20190825 16:55:29.912"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:29.661" endtime="20190825 16:55:29.913"></status>
+</kw>
+<kw name="Input passwd">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=passwordInput</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190825 16:55:29.915" level="INFO">Typing password into text field 'id=passwordInput'.</msg>
+<status status="PASS" starttime="20190825 16:55:29.913" endtime="20190825 16:55:30.157"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:29.913" endtime="20190825 16:55:30.157"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=submitButton</arg>
+</arguments>
+<msg timestamp="20190825 16:55:30.158" level="INFO">Clicking element 'id=submitButton'.</msg>
+<status status="PASS" starttime="20190825 16:55:30.157" endtime="20190825 16:55:31.077"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=CertificateAuthentication</arg>
+</arguments>
+<msg timestamp="20190825 16:55:31.078" level="INFO">Clicking element 'id=CertificateAuthentication'.</msg>
+<status status="PASS" starttime="20190825 16:55:31.077" endtime="20190825 16:55:58.188"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=iQMSNumberId</arg>
+<arg>6779</arg>
+</arguments>
+<msg timestamp="20190825 16:55:58.189" level="INFO">Typing text '6779' into text field 'id=iQMSNumberId'.</msg>
+<status status="PASS" starttime="20190825 16:55:58.189" endtime="20190825 16:55:58.452"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190825 16:56:03.457" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190825 16:55:58.452" endtime="20190825 16:56:03.457"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>id=iQMSNumberId</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20190825 16:56:03.460" level="INFO">Sending key(s) ('RETURN',) to id=iQMSNumberId element.</msg>
+<msg timestamp="20190825 16:56:03.483" level="INFO">Pressing special key RETURN to element.</msg>
+<status status="PASS" starttime="20190825 16:56:03.458" endtime="20190825 16:56:03.815"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190825 16:56:08.821" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190825 16:56:03.815" endtime="20190825 16:56:08.821"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.querySelector("#searchNCETable &gt; tbody &gt; tr &gt; td:nth-child(8) &gt; a").click();</arg>
+</arguments>
+<msg timestamp="20190825 16:56:08.826" level="INFO">Executing JavaScript:
+document.querySelector("#searchNCETable &gt; tbody &gt; tr &gt; td:nth-child(8) &gt; a").click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20190825 16:56:08.821" endtime="20190825 16:56:08.945"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//li/a[contains(text(),'Message Log')]</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" starttime="20190825 16:56:08.945" endtime="20190825 16:56:13.494"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20190825 16:56:18.496" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190825 16:56:13.495" endtime="20190825 16:56:18.497"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:29.660" endtime="20190825 16:56:18.497"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190825 16:56:18.498" endtime="20190825 16:56:21.834"></status>
+</kw>
+<status status="PASS" starttime="20190825 16:55:15.975" endtime="20190825 16:56:21.835" critical="yes"></status>
+</test>
+<doc>Data Driven Test for FSE Users</doc>
+<status status="FAIL" starttime="20190825 16:54:49.939" endtime="20190825 16:56:21.838"></status>
+</suite>
+<status status="FAIL" starttime="20190825 16:54:49.867" endtime="20190825 16:56:21.847"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="1" id="s1-s1" name="Amazon">Tests.Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Sat Aug 01 00:19:55 IST 2020","Sat Aug 01 00:20:25 IST 2020","30531","","Full Regression","Amazon","","","Launch Amazon Website","This is sample test case to Launch Amazon website"
+"passed","Sat Aug 01 00:20:33 IST 2020","Sat Aug 01 00:20:34 IST 2020","1625","","Full Regression","Amazon2","","","Login with Correct Credentials","User should be able to login successfully"
+"passed","Sat Aug 01 00:20:40 IST 2020","Sat Aug 01 00:20:41 IST 2020","763","","Full Regression","Amazon2","","","Logout the user","User should be logout"
+"passed","Sat Aug 01 00:20:37 IST 2020","Sat Aug 01 00:20:40 IST 2020","3365","","Full Regression","Amazon2","","","Proceed to Checkout","Proceeding for checkoout"
+"passed","Sat Aug 01 00:20:34 IST 2020","Sat Aug 01 00:20:37 IST 2020","2072","","Full Regression","Amazon2","","","Select an Item and add to cart","Add item to cart from product page"
+"passed","Sat Aug 01 00:20:25 IST 2020","Sat Aug 01 00:20:33 IST 2020","7400","","Full Regression","Amazon2","","","Launch SauceDemo Website","SauceDemo Homepage should be loaded"

@@ -1,0 +1,392 @@
+{
+  "uid" : "70c5c22e9fbfafc1",
+  "name" : "Verify An Invalid User Is Not Able To Login",
+  "fullName" : "SauceDemo.Verify An Invalid User Is Not Able To Login",
+  "historyId" : "fd3d12bbd269590d16f22c8be5021b41",
+  "time" : {
+    "start" : 1596304758171,
+    "stop" : 1596304767197,
+    "duration" : 9026
+  },
+  "description" : "Verification of Negative Testing Scenario For Login",
+  "descriptionHtml" : "<p>Verification of Negative Testing Scenario For Login</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "Common.Begin Web Test",
+    "time" : {
+      "start" : 1596304758171,
+      "stop" : 1596304764311,
+      "duration" : 6140
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Open Browser",
+      "time" : {
+        "start" : 1596304758171,
+        "stop" : 1596304762168,
+        "duration" : 3997
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "69d76528fbbb402c",
+        "name" : "Keyword Log",
+        "source" : "69d76528fbbb402c.html",
+        "type" : "text/html",
+        "size" : 1634
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "https://www.saucedemo.com"
+      }, {
+        "name" : "arg2",
+        "value" : "gc"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "SeleniumLibrary.Maximize Browser Window",
+      "time" : {
+        "start" : 1596304762169,
+        "stop" : 1596304764311,
+        "duration" : 2142
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ab3baf4c971fe0e3",
+        "name" : "Keyword Log",
+        "source" : "ab3baf4c971fe0e3.html",
+        "type" : "text/html",
+        "size" : 343
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "860187298bc81de4",
+      "name" : "Keyword Log",
+      "source" : "860187298bc81de4.html",
+      "type" : "text/html",
+      "size" : 71
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "hasContent" : true,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "Verification of Negative Testing Scenario For Login",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SaucedemoUI.Login As An Invalid User",
+      "time" : {
+        "start" : 1596304764311,
+        "stop" : 1596304764983,
+        "duration" : 672
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Login.Enter Username",
+        "time" : {
+          "start" : 1596304764311,
+          "stop" : 1596304764499,
+          "duration" : 188
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "SeleniumLibrary.Input Text",
+          "time" : {
+            "start" : 1596304764311,
+            "stop" : 1596304764495,
+            "duration" : 184
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ {
+            "uid" : "c5a2059c7ef32ae3",
+            "name" : "Keyword Log",
+            "source" : "c5a2059c7ef32ae3.html",
+            "type" : "text/html",
+            "size" : 1304
+          } ],
+          "parameters" : [ {
+            "name" : "arg1",
+            "value" : "id=user-name"
+          }, {
+            "name" : "arg2",
+            "value" : "${username}"
+          } ],
+          "stepsCount" : 0,
+          "hasContent" : true,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ {
+          "uid" : "dcb9e9e35914188b",
+          "name" : "Keyword Log",
+          "source" : "dcb9e9e35914188b.html",
+          "type" : "text/html",
+          "size" : 90
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${inv_user}"
+        } ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Login.Enter Password",
+        "time" : {
+          "start" : 1596304764500,
+          "stop" : 1596304764617,
+          "duration" : 117
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "SeleniumLibrary.Input Password",
+          "time" : {
+            "start" : 1596304764501,
+            "stop" : 1596304764616,
+            "duration" : 115
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ {
+            "uid" : "3800709b768f83a1",
+            "name" : "Keyword Log",
+            "source" : "3800709b768f83a1.html",
+            "type" : "text/html",
+            "size" : 1297
+          } ],
+          "parameters" : [ {
+            "name" : "arg1",
+            "value" : "id=password"
+          }, {
+            "name" : "arg2",
+            "value" : "${password}"
+          } ],
+          "stepsCount" : 0,
+          "hasContent" : true,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ {
+          "uid" : "a436d658f9601df0",
+          "name" : "Keyword Log",
+          "source" : "a436d658f9601df0.html",
+          "type" : "text/html",
+          "size" : 90
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${inv_passwd}"
+        } ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Login.Submit Login Form With Credentials",
+        "time" : {
+          "start" : 1596304764617,
+          "stop" : 1596304764961,
+          "duration" : 344
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "SeleniumLibrary.Press Keys",
+          "time" : {
+            "start" : 1596304764618,
+            "stop" : 1596304764959,
+            "duration" : 341
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ {
+            "uid" : "7e639a3a6c47fdd4",
+            "name" : "Keyword Log",
+            "source" : "7e639a3a6c47fdd4.html",
+            "type" : "text/html",
+            "size" : 1437
+          } ],
+          "parameters" : [ {
+            "name" : "arg1",
+            "value" : "id=password"
+          }, {
+            "name" : "arg2",
+            "value" : "RETURN"
+          } ],
+          "stepsCount" : 0,
+          "hasContent" : true,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ {
+          "uid" : "ed81173ca2c160bf",
+          "name" : "Keyword Log",
+          "source" : "ed81173ca2c160bf.html",
+          "type" : "text/html",
+          "size" : 71
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Login.Wait For Error Message On Login Page",
+        "time" : {
+          "start" : 1596304764962,
+          "stop" : 1596304764982,
+          "duration" : 20
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "SeleniumLibrary.Wait Until Page Contains",
+          "time" : {
+            "start" : 1596304764963,
+            "stop" : 1596304764981,
+            "duration" : 18
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ {
+            "uid" : "9948706db0910db6",
+            "name" : "Keyword Log",
+            "source" : "9948706db0910db6.html",
+            "type" : "text/html",
+            "size" : 499
+          } ],
+          "parameters" : [ {
+            "name" : "arg1",
+            "value" : "Username and password do not match any user in this service"
+          } ],
+          "stepsCount" : 0,
+          "hasContent" : true,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ {
+          "uid" : "4fce0092730f4e9a",
+          "name" : "Keyword Log",
+          "source" : "4fce0092730f4e9a.html",
+          "type" : "text/html",
+          "size" : 71
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "hasContent" : true,
+        "attachmentsCount" : 2,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ {
+        "uid" : "4cf59c51177c609a",
+        "name" : "Keyword Log",
+        "source" : "4cf59c51177c609a.html",
+        "type" : "text/html",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "hasContent" : true,
+      "attachmentsCount" : 9,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "hasContent" : true,
+    "attachmentsCount" : 9,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "Common.End Web Test",
+    "time" : {
+      "start" : 1596304764984,
+      "stop" : 1596304767197,
+      "duration" : 2213
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Close Browser",
+      "time" : {
+        "start" : 1596304764984,
+        "stop" : 1596304767197,
+        "duration" : 2213
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f45b61bc4f6aa4a3",
+        "name" : "Keyword Log",
+        "source" : "f45b61bc4f6aa4a3.html",
+        "type" : "text/html",
+        "size" : 402
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "f3dda5faf006a548",
+      "name" : "Keyword Log",
+      "source" : "f3dda5faf006a548.html",
+      "type" : "text/html",
+      "size" : 71
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "hasContent" : true,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "SauceDemo"
+  }, {
+    "name" : "tag",
+    "value" : "NegativeScenario"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "A303598"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "NegativeScenario" ]
+  },
+  "source" : "70c5c22e9fbfafc1.json",
+  "parameterValues" : [ ]
+}

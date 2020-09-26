@@ -1,0 +1,61 @@
+[ {
+  "uid" : "b1ad00315727d58a",
+  "name" : "Proceed to Checkout",
+  "time" : {
+    "start" : 1596221437056,
+    "stop" : 1596221440421,
+    "duration" : 3365
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d71b48f710b35fc4",
+  "name" : "Select an Item and add to cart",
+  "time" : {
+    "start" : 1596221434977,
+    "stop" : 1596221437049,
+    "duration" : 2072
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "70da79562f233819",
+  "name" : "Launch SauceDemo Website",
+  "time" : {
+    "start" : 1596221425932,
+    "stop" : 1596221433332,
+    "duration" : 7400
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e18ea3555597e0bf",
+  "name" : "Logout the user",
+  "time" : {
+    "start" : 1596221440427,
+    "stop" : 1596221441190,
+    "duration" : 763
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "9a84448e2824448e",
+  "name" : "Login with Correct Credentials",
+  "time" : {
+    "start" : 1596221433344,
+    "stop" : 1596221434969,
+    "duration" : 1625
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "81f2a328d2744fb8",
+  "name" : "Launch Amazon Website",
+  "time" : {
+    "start" : 1596221395386,
+    "stop" : 1596221425917,
+    "duration" : 30531
+  },
+  "status" : "failed",
+  "severity" : "critical"
+} ]

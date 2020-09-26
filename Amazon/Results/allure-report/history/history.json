@@ -1,0 +1,117 @@
+{
+  "80e0ae2f14944131a2d2e6a2ca3224dd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "70da79562f233819",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596221425932,
+        "stop" : 1596221433332,
+        "duration" : 7400
+      }
+    } ]
+  },
+  "dcfcd8b878dcdae1d8f8372fd19f2de2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9a84448e2824448e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596221433344,
+        "stop" : 1596221434969,
+        "duration" : 1625
+      }
+    } ]
+  },
+  "fbd0d68c465062b73a4d35037dae9962" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "81f2a328d2744fb8",
+      "status" : "failed",
+      "statusDetails" : "Input with locator 'xpath://div[@data-component-type='s-search-result']//div[@class='sg-col-inner']/div/span/a' not found.",
+      "time" : {
+        "start" : 1596221395386,
+        "stop" : 1596221425917,
+        "duration" : 30531
+      }
+    } ]
+  },
+  "073e3f31a83b63c8c824414a76247cec" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b1ad00315727d58a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596221437056,
+        "stop" : 1596221440421,
+        "duration" : 3365
+      }
+    } ]
+  },
+  "cc74b37ce5fee2921f0c363e86912807" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d71b48f710b35fc4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596221434977,
+        "stop" : 1596221437049,
+        "duration" : 2072
+      }
+    } ]
+  },
+  "73caf5ca00728ed7b195ac4973f433e6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e18ea3555597e0bf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1596221440427,
+        "stop" : 1596221441190,
+        "duration" : 763
+      }
+    } ]
+  }
+}

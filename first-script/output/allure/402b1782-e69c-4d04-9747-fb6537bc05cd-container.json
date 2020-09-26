@@ -1,0 +1,1 @@
+{"uuid": "c8574946-1fdd-417d-8eaf-ba6e27cc95b6", "name": "User should be loging via sso in Quality Mylam site", "children": ["fe6577cb-296d-49ad-8b4c-7b06640f6be0"], "description": "User should be able to login in QML", "start": 1566243096857, "stop": 1566243215770}

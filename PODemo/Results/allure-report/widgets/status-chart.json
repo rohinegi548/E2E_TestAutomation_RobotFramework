@@ -1,0 +1,21 @@
+[ {
+  "uid" : "49eadecbc0af8162",
+  "name" : "Verify E2E Product Order Flow For A Valid User",
+  "time" : {
+    "start" : 1596304767197,
+    "stop" : 1596304785554,
+    "duration" : 18357
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "70c5c22e9fbfafc1",
+  "name" : "Verify An Invalid User Is Not Able To Login",
+  "time" : {
+    "start" : 1596304758171,
+    "stop" : 1596304767197,
+    "duration" : 9026
+  },
+  "status" : "passed",
+  "severity" : "critical"
+} ]

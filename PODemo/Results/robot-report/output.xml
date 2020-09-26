@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20200801 23:59:05.675" rpa="false">
+<suite id="s1" name="SauceDemoGherkinVersion" source="C:\deveopment\robot-scripts\PODemo\tests\SauceDemoGherkinVersion.robot">
+<test id="s1-t1" name="Verify An Invalid User Is Not Able To Login">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20200801 23:59:05.931" level="INFO">Opening browser 'gc' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20200801 23:59:05.931" endtime="20200801 23:59:11.309"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200801 23:59:11.309" endtime="20200801 23:59:13.452"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:05.930" endtime="20200801 23:59:13.453"></status>
+</kw>
+<kw name="Login As An Invalid User" library="SaucedemoUI">
+<kw name="Enter Username" library="Login">
+<arguments>
+<arg>${inv_user}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:13.457" level="INFO">Typing text 'hello' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20200801 23:59:13.457" endtime="20200801 23:59:13.598"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:13.456" endtime="20200801 23:59:13.598"></status>
+</kw>
+<kw name="Enter Password" library="Login">
+<arguments>
+<arg>${inv_passwd}</arg>
+</arguments>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:13.599" level="INFO">Typing password into text field 'id=password'.</msg>
+<status status="PASS" starttime="20200801 23:59:13.599" endtime="20200801 23:59:13.705"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:13.598" endtime="20200801 23:59:13.705"></status>
+</kw>
+<kw name="Submit Login Form With Credentials" library="Login">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200801 23:59:13.706" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200801 23:59:13.714" level="INFO">Pressing special key RETURN to element.</msg>
+<status status="PASS" starttime="20200801 23:59:13.706" endtime="20200801 23:59:14.014"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:13.705" endtime="20200801 23:59:14.015"></status>
+</kw>
+<kw name="Wait For Error Message On Login Page" library="Login">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Username and password do not match any user in this service</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:14.016" endtime="20200801 23:59:14.032"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:14.015" endtime="20200801 23:59:14.033"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:13.454" endtime="20200801 23:59:14.033"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200801 23:59:14.034" endtime="20200801 23:59:16.198"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:14.034" endtime="20200801 23:59:16.198"></status>
+</kw>
+<doc>Verification of Negative Testing Scenario For Login</doc>
+<tags>
+<tag>NegativeScenario</tag>
+</tags>
+<status status="PASS" starttime="20200801 23:59:05.929" endtime="20200801 23:59:16.200" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Verify E2E Product Order Flow For A Valid User">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.saucedemo.com</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20200801 23:59:16.210" level="INFO">Opening browser 'gc' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20200801 23:59:16.210" endtime="20200801 23:59:20.265"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200801 23:59:20.265" endtime="20200801 23:59:22.389"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:16.208" endtime="20200801 23:59:22.389"></status>
+</kw>
+<kw name="Given Verify Title Of The Landed Page" library="SaucedemoUI">
+<kw name="Loginpage Loaded" library="Login">
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200801 23:59:22.397" level="INFO">${title} = Swag Labs</msg>
+<status status="PASS" starttime="20200801 23:59:22.391" endtime="20200801 23:59:22.397"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>Swag</arg>
+<arg>ignore_case=True</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:22.398" endtime="20200801 23:59:22.398"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.391" endtime="20200801 23:59:22.398"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.390" endtime="20200801 23:59:22.398"></status>
+</kw>
+<kw name="When Login As A Valid User" library="SaucedemoUI">
+<kw name="Enter Username" library="Login">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:22.403" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20200801 23:59:22.401" endtime="20200801 23:59:22.560"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.400" endtime="20200801 23:59:22.561"></status>
+</kw>
+<kw name="Enter Password" library="Login">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:22.561" level="INFO">Typing password into text field 'id=password'.</msg>
+<status status="PASS" starttime="20200801 23:59:22.561" endtime="20200801 23:59:22.679"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.561" endtime="20200801 23:59:22.680"></status>
+</kw>
+<kw name="Submit Login Form With Credentials" library="Login">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200801 23:59:22.680" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200801 23:59:22.689" level="INFO">Pressing special key RETURN to element.</msg>
+<status status="PASS" starttime="20200801 23:59:22.680" endtime="20200801 23:59:27.491"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.680" endtime="20200801 23:59:27.492"></status>
+</kw>
+<kw name="Wait For Homepage Load After Login" library="Homepage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Products</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:27.494" endtime="20200801 23:59:27.526"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.492" endtime="20200801 23:59:27.526"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:22.399" endtime="20200801 23:59:27.526"></status>
+</kw>
+<kw name="Then Verify Logged In Successfully" library="SaucedemoUI">
+<kw name="Homepage Loaded" library="Homepage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${curr_url}</var>
+</assign>
+<msg timestamp="20200801 23:59:27.535" level="INFO">${curr_url} = https://www.saucedemo.com/inventory.html</msg>
+<status status="PASS" starttime="20200801 23:59:27.527" endtime="20200801 23:59:27.535"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${curr_url}</arg>
+<arg>inventory</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:27.535" endtime="20200801 23:59:27.536"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.527" endtime="20200801 23:59:27.536"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.527" endtime="20200801 23:59:27.536"></status>
+</kw>
+<kw name="When Select An Item And ADD It To The Cart" library="SaucedemoUI">
+<kw name="Click On Add To Cart" library="Homepage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>ADD TO CART</arg>
+</arguments>
+<msg timestamp="20200801 23:59:27.538" level="INFO">Clicking button 'ADD TO CART'.</msg>
+<status status="PASS" starttime="20200801 23:59:27.537" endtime="20200801 23:59:27.616"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.537" endtime="20200801 23:59:27.616"></status>
+</kw>
+<kw name="GoTo Cart Page" library="Homepage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="shopping_cart_container"]/a</arg>
+</arguments>
+<msg timestamp="20200801 23:59:27.618" level="INFO">Clicking element 'xpath=//*[@id="shopping_cart_container"]/a'.</msg>
+<status status="PASS" starttime="20200801 23:59:27.617" endtime="20200801 23:59:28.376"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.617" endtime="20200801 23:59:28.377"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:27.537" endtime="20200801 23:59:28.377"></status>
+</kw>
+<kw name="Then Verify Cart Page Gets Loaded" library="SaucedemoUI">
+<kw name="Cart Page Loaded" library="Cart">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>REMOVE</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:28.381" endtime="20200801 23:59:28.405"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>CHECKOUT</arg>
+</arguments>
+<msg timestamp="20200801 23:59:28.426" level="INFO">Current page contains text 'CHECKOUT'.</msg>
+<status status="PASS" starttime="20200801 23:59:28.405" endtime="20200801 23:59:28.426"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:28.379" endtime="20200801 23:59:28.427"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:28.378" endtime="20200801 23:59:28.427"></status>
+</kw>
+<kw name="When Proceed To Checkout &amp; Verify Checkout Page Loaded" library="SaucedemoUI">
+<kw name="Click On Checkout Button" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="cart_contents_container"]/div/div[2]/a[2]</arg>
+</arguments>
+<msg timestamp="20200801 23:59:28.428" level="INFO">Clicking element 'xpath=//*[@id="cart_contents_container"]/div/div[2]/a[2]'.</msg>
+<status status="PASS" starttime="20200801 23:59:28.428" endtime="20200801 23:59:29.820"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:28.428" endtime="20200801 23:59:29.821"></status>
+</kw>
+<kw name="Checkout Preview Page Loaded" library="CheckoutPreview">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Checkout: Your Information</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:29.823" endtime="20200801 23:59:29.844"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:29.822" endtime="20200801 23:59:29.844"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:28.428" endtime="20200801 23:59:29.844"></status>
+</kw>
+<kw name="And Enter Shipping Details &amp; Continue" library="SaucedemoUI">
+<kw name="Enter First Name" library="CheckoutPreview">
+<arguments>
+<arg>${firstname}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=first-name</arg>
+<arg>${firstname}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:29.846" level="INFO">Typing text 'Alex' into text field 'id=first-name'.</msg>
+<status status="PASS" starttime="20200801 23:59:29.846" endtime="20200801 23:59:29.962"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:29.846" endtime="20200801 23:59:29.962"></status>
+</kw>
+<kw name="Enter Last Name" library="CheckoutPreview">
+<arguments>
+<arg>${lastname}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=last-name</arg>
+<arg>${lastname}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:29.963" level="INFO">Typing text 'Casto' into text field 'id=last-name'.</msg>
+<status status="PASS" starttime="20200801 23:59:29.963" endtime="20200801 23:59:30.069"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:29.963" endtime="20200801 23:59:30.069"></status>
+</kw>
+<kw name="Enter Postal Code" library="CheckoutPreview">
+<arguments>
+<arg>${postalcode}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=postal-code</arg>
+<arg>${postal_code}</arg>
+</arguments>
+<msg timestamp="20200801 23:59:30.072" level="INFO">Typing text '160062' into text field 'id=postal-code'.</msg>
+<status status="PASS" starttime="20200801 23:59:30.071" endtime="20200801 23:59:30.187"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:30.070" endtime="20200801 23:59:30.187"></status>
+</kw>
+<kw name="Continue To Order Preview" library="CheckoutPreview">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>CONTINUE</arg>
+</arguments>
+<msg timestamp="20200801 23:59:30.188" level="INFO">Clicking button 'CONTINUE'.</msg>
+<status status="PASS" starttime="20200801 23:59:30.188" endtime="20200801 23:59:30.983"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:30.188" endtime="20200801 23:59:30.983"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:29.845" endtime="20200801 23:59:30.984"></status>
+</kw>
+<kw name="Then Verify Checkout:Overview Page Loaded &amp; Continue To Place Order" library="SaucedemoUI">
+<kw name="Order Review Page Loaded" library="OrderReview">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Checkout: Overview</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:30.988" endtime="20200801 23:59:31.008"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:30.987" endtime="20200801 23:59:31.008"></status>
+</kw>
+<kw name="Continue To Confirm Order" library="OrderReview">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]</arg>
+</arguments>
+<msg timestamp="20200801 23:59:31.010" level="INFO">Clicking element 'xpath=//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]'.</msg>
+<status status="PASS" starttime="20200801 23:59:31.009" endtime="20200801 23:59:31.929"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:31.009" endtime="20200801 23:59:31.929"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:30.986" endtime="20200801 23:59:31.929"></status>
+</kw>
+<kw name="And Verify Order Confirmation Page Loaded" library="SaucedemoUI">
+<kw name="Order Confirmation Page Loaded" library="OrderConfirmation">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>THANK YOU FOR YOUR ORDER</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:31.936" endtime="20200801 23:59:31.965"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Your order has been dispatched, and will arrive</arg>
+</arguments>
+<msg timestamp="20200801 23:59:31.988" level="INFO">Current page contains text 'Your order has been dispatched, and will arrive'.</msg>
+<status status="PASS" starttime="20200801 23:59:31.966" endtime="20200801 23:59:31.988"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:31.935" endtime="20200801 23:59:31.989"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:31.932" endtime="20200801 23:59:31.989"></status>
+</kw>
+<kw name="When Logout From The SauceDemo Website" library="SaucedemoUI">
+<kw name="Finding Logout Link &amp; Clicking On It" library="Homepage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>Open Menu</arg>
+</arguments>
+<msg timestamp="20200801 23:59:31.990" level="INFO">Clicking button 'Open Menu'.</msg>
+<status status="PASS" starttime="20200801 23:59:31.990" endtime="20200801 23:59:32.066"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>logout_sidebar_link</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:32.067" endtime="20200801 23:59:32.339"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>logout_sidebar_link</arg>
+</arguments>
+<msg timestamp="20200801 23:59:32.339" level="INFO">Clicking link 'logout_sidebar_link'.</msg>
+<status status="PASS" starttime="20200801 23:59:32.339" endtime="20200801 23:59:33.354"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:31.990" endtime="20200801 23:59:33.354"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:31.990" endtime="20200801 23:59:33.355"></status>
+</kw>
+<kw name="Then Verify Logout Successfully" library="SaucedemoUI">
+<kw name="Loginpage URL Loaded" library="Login">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser URL.</doc>
+<assign>
+<var>${main_url}</var>
+</assign>
+<msg timestamp="20200801 23:59:33.375" level="INFO">${main_url} = https://www.saucedemo.com/index.html</msg>
+<status status="PASS" starttime="20200801 23:59:33.361" endtime="20200801 23:59:33.375"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${main_url}</arg>
+<arg>https://www.saucedemo.com/index.html</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:33.375" endtime="20200801 23:59:33.376"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:33.359" endtime="20200801 23:59:33.376"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:33.357" endtime="20200801 23:59:33.376"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200801 23:59:33.377" endtime="20200801 23:59:35.556"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:33.377" endtime="20200801 23:59:35.557"></status>
+</kw>
+<doc>E2E Product Order Flow For A Valid User</doc>
+<tags>
+<tag>PostivieScenario</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" starttime="20200801 23:59:16.205" endtime="20200801 23:59:35.558" critical="yes"></status>
+</test>
+<kw name="Generate Allure Report" library="Common" type="teardown">
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>allure generate results/allure-results -o results/allure-report</arg>
+</arguments>
+<msg timestamp="20200801 23:59:35.578" level="INFO">Running command 'allure generate results/allure-results -o results/allure-report 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20200801 23:59:35.567" endtime="20200801 23:59:36.006"></status>
+</kw>
+<kw name="Copy Files" library="OperatingSystem">
+<doc>Copies specified files to the target directory.</doc>
+<arguments>
+<arg>results/robot-report/*.png</arg>
+<arg>results/allure-report/data/attachments</arg>
+</arguments>
+<status status="PASS" starttime="20200801 23:59:36.006" endtime="20200801 23:59:36.007"></status>
+</kw>
+<status status="PASS" starttime="20200801 23:59:35.565" endtime="20200801 23:59:36.007"></status>
+</kw>
+<doc>Saucedemo e-commerce application automation</doc>
+<status status="PASS" starttime="20200801 23:59:05.677" endtime="20200801 23:59:36.007"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">NegativeScenario</stat>
+<stat pass="1" fail="0">PostivieScenario</stat>
+<stat pass="1" fail="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="SauceDemoGherkinVersion">SauceDemoGherkinVersion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

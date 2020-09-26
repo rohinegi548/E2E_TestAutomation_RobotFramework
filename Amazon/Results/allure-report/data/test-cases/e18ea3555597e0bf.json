@@ -1,0 +1,190 @@
+{
+  "uid" : "e18ea3555597e0bf",
+  "name" : "Logout the user",
+  "fullName" : "Full Regression.Amazon2.Logout the user",
+  "historyId" : "73caf5ca00728ed7b195ac4973f433e6",
+  "time" : {
+    "start" : 1596221440427,
+    "stop" : 1596221441190,
+    "duration" : 763
+  },
+  "description" : "User should be logout",
+  "descriptionHtml" : "<p>User should be logout</p>\n",
+  "status" : "passed",
+  "statusTrace" : "Traceback (most recent call last):\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\__init__.py\", line 372, in run_keyword\n    return DynamicCore.run_keyword(self, name, args, kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\robotlibcore.py\", line 102, in run_keyword\n    return self.keywords[name](*args, **kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\keywords\\element.py\", line 549, in click_image\n    element = self.find_element(locator, tag='input')\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\context.py\", line 62, in find_element\n    return self.element_finder.find(locator, tag, True, required, parent)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\locators\\elementfinder.py\", line 76, in find\n    % (element_type, locator))",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "User should be logout",
+    "status" : "passed",
+    "statusTrace" : "Traceback (most recent call last):\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\__init__.py\", line 372, in run_keyword\n    return DynamicCore.run_keyword(self, name, args, kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\robotlibcore.py\", line 102, in run_keyword\n    return self.keywords[name](*args, **kwargs)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\keywords\\element.py\", line 549, in click_image\n    element = self.find_element(locator, tag='input')\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\base\\context.py\", line 62, in find_element\n    return self.element_finder.find(locator, tag, True, required, parent)\n  File \"c:\\anaconda\\lib\\site-packages\\SeleniumLibrary\\locators\\elementfinder.py\", line 76, in find\n    % (element_type, locator))",
+    "steps" : [ {
+      "name" : "SeleniumLibrary.Click Button",
+      "time" : {
+        "start" : 1596221440427,
+        "stop" : 1596221440717,
+        "duration" : 290
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "dcb1254a319c14e9",
+        "name" : "Keyword Log",
+        "source" : "dcb1254a319c14e9.html",
+        "type" : "text/html",
+        "size" : 1633
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Open Menu"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "SeleniumLibrary.Wait Until Element Is Visible",
+      "time" : {
+        "start" : 1596221440729,
+        "stop" : 1596221440817,
+        "duration" : 88
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c6f94619aa849ce9",
+        "name" : "Keyword Log",
+        "source" : "c6f94619aa849ce9.html",
+        "type" : "text/html",
+        "size" : 46359
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "logout_sidebar_link"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "SeleniumLibrary.Click Link",
+      "time" : {
+        "start" : 1596221440819,
+        "stop" : 1596221441178,
+        "duration" : 359
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "76d7862bdfbde7ab",
+        "name" : "Keyword Log",
+        "source" : "76d7862bdfbde7ab.html",
+        "type" : "text/html",
+        "size" : 1312
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "logout_sidebar_link"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "${main_url} = SeleniumLibrary.Get Location",
+      "time" : {
+        "start" : 1596221441179,
+        "stop" : 1596221441185,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "10380b47494b6415",
+        "name" : "Keyword Log",
+        "source" : "10380b47494b6415.html",
+        "type" : "text/html",
+        "size" : 430
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    }, {
+      "name" : "BuiltIn.Should Be Equal As Strings",
+      "time" : {
+        "start" : 1596221441186,
+        "stop" : 1596221441189,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b2eb81de969b1ac0",
+        "name" : "Keyword Log",
+        "source" : "b2eb81de969b1ac0.html",
+        "type" : "text/html",
+        "size" : 231
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${main_url}"
+      }, {
+        "name" : "arg2",
+        "value" : "https://www.saucedemo.com/index.html"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 5
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Full Regression"
+  }, {
+    "name" : "subSuite",
+    "value" : "Amazon2"
+  }, {
+    "name" : "tag",
+    "value" : "Logout"
+  }, {
+    "name" : "thread"
+  }, {
+    "name" : "host",
+    "value" : "A303598"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "Logout" ]
+  },
+  "source" : "e18ea3555597e0bf.json",
+  "parameterValues" : [ ]
+}

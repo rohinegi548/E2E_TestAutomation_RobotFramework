@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20200725 14:34:07.628" rpa="false">
+<suite id="s1" name="Amazon" source="C:\deveopment\robot-scripts\first-script\tests\amazon.robot">
+<test id="s1-t1" name="Login with FSE User">
+<kw name="Open WebURL in Browser" type="setup">
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='ie'</arg>
+<arg>Run ie Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [ "'edge'=='ie'" | 'Run ie Browser' ]</msg>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:08.014" endtime="20200725 14:34:08.014"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='gc'</arg>
+<arg>Run chrome Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [ "'edge'=='gc'" | 'Run chrome Browser' ]</msg>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:08.014" endtime="20200725 14:34:08.014"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='firefox'</arg>
+<arg>Run firefox Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [ "'edge'=='firefox'" | 'Run firefox Browser' ]</msg>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:08.014" endtime="20200725 14:34:08.014"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='edge'</arg>
+<arg>Run edge Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [ "'edge'=='edge'" | 'Run edge Browser' ]</msg>
+<kw name="Run edge Browser">
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://qa-quality.mylam.com</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200725 14:34:08.014" level="TRACE">Arguments: [ 'http://qa-quality.mylam.com' | 'edge' ]</msg>
+<msg timestamp="20200725 14:34:08.014" level="INFO">Opening browser 'edge' to base url 'http://qa-quality.mylam.com'.</msg>
+<msg timestamp="20200725 14:34:08.576" level="DEBUG">POST http://localhost:49387/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "MicrosoftEdge", "platformName": "windows"}}, "desiredCapabilities": {"browserName": "MicrosoftEdge", "version": "", "platform": "WINDOWS"}}</msg>
+<msg timestamp="20200725 14:34:08.576" level="DEBUG">Starting new HTTP connection (1): localhost:49387</msg>
+<msg timestamp="20200725 14:34:10.514" level="DEBUG">http://localhost:49387 "POST /session HTTP/1.1" 500 13</msg>
+<msg timestamp="20200725 14:34:10.514" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200725 14:34:10.514" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20200725 14:34:10.514" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20200725 14:34:10.514" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:10.514" endtime="20200725 14:34:10.514"></status>
+</kw>
+<msg timestamp="20200725 14:34:10.530" level="FAIL">WebDriverException: Message: Unknown error
+</msg>
+<msg timestamp="20200725 14:34:10.530" level="DEBUG">Traceback (most recent call last):
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\__init__.py", line 372, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\base\robotlibcore.py", line 102, in run_keyword
+    return self.keywords[name](*args, **kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 131, in open_browser
+    ff_profile_dir, remote_url)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 456, in _make_driver
+    remote_url=remote, profile_dir=profile_dir)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\webdrivertools.py", line 59, in create_driver
+    return creation_method(desired_capabilities, remote_url)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\webdrivertools.py", line 155, in create_edge
+    return webdriver.Edge(**desired_capabilities)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\edge\webdriver.py", line 66, in __init__
+    desired_capabilities=capabilities)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 208, in check_response
+    raise exception_class(value)</msg>
+<status status="FAIL" starttime="20200725 14:34:08.014" endtime="20200725 14:34:10.530"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:08.014" endtime="20200725 14:34:10.530"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:08.014" endtime="20200725 14:34:10.530"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:08.014" endtime="20200725 14:34:10.530"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:08.014" endtime="20200725 14:34:10.530" critical="yes">Setup failed:
+WebDriverException: Message: Unknown error
+</status>
+</test>
+<test id="s1-t2" name="Login with Non-FSE User">
+<kw name="Open WebURL in Browser" type="setup">
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='ie'</arg>
+<arg>Run ie Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Arguments: [ "'edge'=='ie'" | 'Run ie Browser' ]</msg>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:10.530" endtime="20200725 14:34:10.530"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='gc'</arg>
+<arg>Run chrome Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Arguments: [ "'edge'=='gc'" | 'Run chrome Browser' ]</msg>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:10.530" endtime="20200725 14:34:10.530"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='firefox'</arg>
+<arg>Run firefox Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Arguments: [ "'edge'=='firefox'" | 'Run firefox Browser' ]</msg>
+<msg timestamp="20200725 14:34:10.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:10.530" endtime="20200725 14:34:10.530"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'=='edge'</arg>
+<arg>Run edge Browser</arg>
+</arguments>
+<msg timestamp="20200725 14:34:10.545" level="TRACE">Arguments: [ "'edge'=='edge'" | 'Run edge Browser' ]</msg>
+<kw name="Run edge Browser">
+<msg timestamp="20200725 14:34:10.545" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://qa-quality.mylam.com</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200725 14:34:10.545" level="TRACE">Arguments: [ 'http://qa-quality.mylam.com' | 'edge' ]</msg>
+<msg timestamp="20200725 14:34:10.545" level="INFO">Opening browser 'edge' to base url 'http://qa-quality.mylam.com'.</msg>
+<msg timestamp="20200725 14:34:11.073" level="DEBUG">POST http://localhost:49394/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "MicrosoftEdge", "platformName": "windows"}}, "desiredCapabilities": {"browserName": "MicrosoftEdge", "version": "", "platform": "WINDOWS"}}</msg>
+<msg timestamp="20200725 14:34:11.073" level="DEBUG">Starting new HTTP connection (1): localhost:49394</msg>
+<msg timestamp="20200725 14:34:12.294" level="DEBUG">http://localhost:49394 "POST /session HTTP/1.1" 500 13</msg>
+<msg timestamp="20200725 14:34:12.294" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200725 14:34:12.294" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20200725 14:34:12.302" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20200725 14:34:12.302" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200725 14:34:12.294" endtime="20200725 14:34:12.302"></status>
+</kw>
+<msg timestamp="20200725 14:34:12.302" level="FAIL">WebDriverException: Message: Unknown error
+</msg>
+<msg timestamp="20200725 14:34:12.302" level="DEBUG">Traceback (most recent call last):
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\__init__.py", line 372, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\base\robotlibcore.py", line 102, in run_keyword
+    return self.keywords[name](*args, **kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 131, in open_browser
+    ff_profile_dir, remote_url)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 456, in _make_driver
+    remote_url=remote, profile_dir=profile_dir)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\webdrivertools.py", line 59, in create_driver
+    return creation_method(desired_capabilities, remote_url)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\webdrivertools.py", line 155, in create_edge
+    return webdriver.Edge(**desired_capabilities)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\edge\webdriver.py", line 66, in __init__
+    desired_capabilities=capabilities)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "c:\anaconda\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 208, in check_response
+    raise exception_class(value)</msg>
+<status status="FAIL" starttime="20200725 14:34:10.545" endtime="20200725 14:34:12.302"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:10.545" endtime="20200725 14:34:12.302"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:10.545" endtime="20200725 14:34:12.302"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:10.530" endtime="20200725 14:34:12.302"></status>
+</kw>
+<status status="FAIL" starttime="20200725 14:34:10.530" endtime="20200725 14:34:12.302" critical="yes">Setup failed:
+WebDriverException: Message: Unknown error
+</status>
+</test>
+<doc>Data Driven Test for FSE Users</doc>
+<status status="FAIL" starttime="20200725 14:34:07.644" endtime="20200725 14:34:12.302"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

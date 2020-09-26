@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20200813 00:08:45.291" rpa="false">
+<suite id="s1" name="DataDrivenTestBasedOnDataFromCSV" source="C:\deveopment\robot-scripts\DDCSV\tests\DataDrivenTestBasedOnDataFromCSV.robot">
+<test id="s1-t1" name="Verify Login Should Fail For Invalid Credentials">
+<kw name="Begin Web Test" library="Common" type="setup">
+<arguments>
+<arg>${ENV_URLS}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:45.596" level="TRACE">Arguments: [ ${env_url}={'dev': 'https://www.saucedemo.com',
+ 'prod': 'https://www.saucedemo.com',
+ 'qa': 'http://www.saucedemo.com'} | ${browser}='chrome' ]</msg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${env_url.${ENV}}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:45.598" level="TRACE">Arguments: [ 'http://www.saucedemo.com' | 'chrome' ]</msg>
+<msg timestamp="20200813 00:08:45.598" level="INFO">Opening browser 'chrome' to base url 'http://www.saucedemo.com'.</msg>
+<msg timestamp="20200813 00:08:46.134" level="DEBUG">POST http://127.0.0.1:54696/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
+<msg timestamp="20200813 00:08:46.135" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:54696</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">http://127.0.0.1:54696 "POST /session HTTP/1.1" 200 718</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/timeouts {"script": 5000}</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/timeouts {"implicit": 0}</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:49.054" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:08:50.067" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:50.068" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:50.068" level="DEBUG">Opened browser with session id e174ed4aa56c4770147458c36d21ebdc.</msg>
+<msg timestamp="20200813 00:08:50.068" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20200813 00:08:45.596" endtime="20200813 00:08:50.068"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20200813 00:08:50.069" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20200813 00:08:50.069" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/window/maximize {}</msg>
+<msg timestamp="20200813 00:08:52.264" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/window/maximize HTTP/1.1" 200 51</msg>
+<msg timestamp="20200813 00:08:52.265" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.265" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:50.069" endtime="20200813 00:08:52.265"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.265" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:45.596" endtime="20200813 00:08:52.265"></status>
+</kw>
+<kw name="Get CSV Data" library="DataManager">
+<arguments>
+<arg>${INVALID_CRED_LOGINCHECK_CSV_PATH}</arg>
+</arguments>
+<assign>
+<var>${invalid_login_scenarios}</var>
+</assign>
+<msg timestamp="20200813 00:08:52.266" level="TRACE">Arguments: [ ${filepath}='C:\\deveopment\\robot-scripts\\DDCSV\\Data\\userlogindata.csv' ]</msg>
+<kw name="Read Csv File" library="CSV">
+<arguments>
+<arg>${filepath}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20200813 00:08:52.267" level="TRACE">Arguments: [ 'C:\\deveopment\\robot-scripts\\DDCSV\\Data\\userlogindata.csv' ]</msg>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Return: [['standard_user',
+  'hellopassword',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'secret_sauce',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'hellopasswd',
+  'Username and password do not match ay user in this service'],
+ ['', 'secret_sauce', 'Username is required'],
+ ['standard_user', '', 'Password is required'],
+ ['', '', 'Username is required']]</msg>
+<msg timestamp="20200813 00:08:52.268" level="INFO">${data} = [['standard_user', 'hellopassword', 'Username and password do not match any user in this service'], ['hellouser', 'secret_sauce', 'Username and password do not match any user in this service'], ['hell...</msg>
+<status status="PASS" starttime="20200813 00:08:52.266" endtime="20200813 00:08:52.268"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Return: [['standard_user',
+  'hellopassword',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'secret_sauce',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'hellopasswd',
+  'Username and password do not match ay user in this service'],
+ ['', 'secret_sauce', 'Username is required'],
+ ['standard_user', '', 'Password is required'],
+ ['', '', 'Username is required']]</msg>
+<msg timestamp="20200813 00:08:52.268" level="INFO">${invalid_login_scenarios} = [['standard_user', 'hellopassword', 'Username and password do not match any user in this service'], ['hellouser', 'secret_sauce', 'Username and password do not match any user in this service'], ['hell...</msg>
+<status status="PASS" starttime="20200813 00:08:52.266" endtime="20200813 00:08:52.268"></status>
+</kw>
+<kw name="Logincheck For Invalid Scenarios" library="SaucedemoUI">
+<arguments>
+<arg>${invalid_login_scenarios}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Arguments: [ ${invalid_user_credentials}=[['standard_user',
+  'hellopassword',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'secret_sauce',
+  'Username and password do not match any user in this service'],
+ ['hellouser',
+  'hellopasswd',
+  'Username and password do not match ay user in this service'],
+ ['', 'secret_sauce', 'Username is required'],
+ ['standard_user', '', 'Password is required'],
+ ['', '', 'Username is required']] ]</msg>
+<kw name="${item} IN [ @{invalid_user_credentials} ]" type="for">
+<kw name="${item} = ['standard_user', 'hellopassword', 'Username and password do not match any user in this service']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Arguments: [ ${user_login_data}=['standard_user',
+ 'hellopassword',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.268" level="TRACE">Arguments: [ 'id=user-name' | 'standard_user' ]</msg>
+<msg timestamp="20200813 00:08:52.268" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:08:52.268" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:08:52.293" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:52.294" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.294" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/144be24c-0271-48d8-a39d-5ea08801cfac/clear {"id": "144be24c-0271-48d8-a39d-5ea08801cfac"}</msg>
+<msg timestamp="20200813 00:08:52.343" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/144be24c-0271-48d8-a39d-5ea08801cfac/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:52.343" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.343" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/144be24c-0271-48d8-a39d-5ea08801cfac/value {"text": "standard_user", "value": ["s", "t", "a", "n", "d", "a", "r", "d", "_", "u", "s", "e", "r"], "id": "144be24c-0271-48d8-a39d-5ea08801cfac"}</msg>
+<msg timestamp="20200813 00:08:52.450" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/144be24c-0271-48d8-a39d-5ea08801cfac/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:52.451" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.451" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.268" endtime="20200813 00:08:52.451"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.451" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.268" endtime="20200813 00:08:52.451"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.451" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.268" endtime="20200813 00:08:52.451"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.452" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.453" level="TRACE">Arguments: [ ${user_login_data}=['standard_user',
+ 'hellopassword',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.454" level="TRACE">Arguments: [ 'id=password' | 'hellopassword' ]</msg>
+<msg timestamp="20200813 00:08:52.454" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:08:52.454" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:52.469" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:52.469" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.469" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/c90b794b-c98b-46df-9542-da4e22409fee/clear {"id": "c90b794b-c98b-46df-9542-da4e22409fee"}</msg>
+<msg timestamp="20200813 00:08:52.519" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/c90b794b-c98b-46df-9542-da4e22409fee/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:52.519" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.519" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/c90b794b-c98b-46df-9542-da4e22409fee/value {"text": "hellopassword", "value": ["h", "e", "l", "l", "o", "p", "a", "s", "s", "w", "o", "r", "d"], "id": "c90b794b-c98b-46df-9542-da4e22409fee"}</msg>
+<msg timestamp="20200813 00:08:52.610" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/c90b794b-c98b-46df-9542-da4e22409fee/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:52.610" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.610" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.453" endtime="20200813 00:08:52.610"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.610" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.452" endtime="20200813 00:08:52.610"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.610" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.452" endtime="20200813 00:08:52.611"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.611" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:08:52.611" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.611" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:08:52.611" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:08:52.611" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:52.624" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:52.624" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.625" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:08:52.625" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "c90b794b-c98b-46df-9542-da4e22409fee"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:08:52.945" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:52.946" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.946" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.611" endtime="20200813 00:08:52.946"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.947" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.611" endtime="20200813 00:08:52.947"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.947" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.611" endtime="20200813 00:08:52.948"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.948" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.949" level="TRACE">Arguments: [ ${user_login_data}=['standard_user',
+ 'hellopassword',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.950" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.952" level="TRACE">Arguments: [ 'Username and password do not match any user in this service' ]</msg>
+<msg timestamp="20200813 00:08:52.952" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match any user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:52.968" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 643</msg>
+<msg timestamp="20200813 00:08:52.968" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:52.968" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.951" endtime="20200813 00:08:52.968"></status>
+</kw>
+<msg timestamp="20200813 00:08:52.968" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.950" endtime="20200813 00:08:52.968"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:52.968" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:08:52.968" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:08:52.968" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:08:53.058" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.059" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.060" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.968" endtime="20200813 00:08:53.060"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.060" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.949" endtime="20200813 00:08:53.060"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.060" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:52.948" endtime="20200813 00:08:53.061"></status>
+</kw>
+<status status="PASS" starttime="20200813 00:08:52.268" endtime="20200813 00:08:53.061"></status>
+</kw>
+<kw name="${item} = ['hellouser', 'secret_sauce', 'Username and password do not match any user in this service']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.064" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.066" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'secret_sauce',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.067" level="TRACE">Arguments: [ 'id=user-name' | 'hellouser' ]</msg>
+<msg timestamp="20200813 00:08:53.067" level="INFO">Typing text 'hellouser' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:08:53.068" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:08:53.086" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:53.086" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.086" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/b093aeb5-79b0-402f-be32-d0436bd83232/clear {"id": "b093aeb5-79b0-402f-be32-d0436bd83232"}</msg>
+<msg timestamp="20200813 00:08:53.137" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/b093aeb5-79b0-402f-be32-d0436bd83232/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.138" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.138" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/b093aeb5-79b0-402f-be32-d0436bd83232/value {"text": "hellouser", "value": ["h", "e", "l", "l", "o", "u", "s", "e", "r"], "id": "b093aeb5-79b0-402f-be32-d0436bd83232"}</msg>
+<msg timestamp="20200813 00:08:53.228" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/b093aeb5-79b0-402f-be32-d0436bd83232/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.229" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.229" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.067" endtime="20200813 00:08:53.229"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.229" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.066" endtime="20200813 00:08:53.229"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.229" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.064" endtime="20200813 00:08:53.229"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.230" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.230" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'secret_sauce',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.230" level="TRACE">Arguments: [ 'id=password' | 'secret_sauce' ]</msg>
+<msg timestamp="20200813 00:08:53.230" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:08:53.230" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:53.244" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:53.245" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.245" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/b99eaf03-5075-47a5-8d74-1215a2082cab/clear {"id": "b99eaf03-5075-47a5-8d74-1215a2082cab"}</msg>
+<msg timestamp="20200813 00:08:53.305" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/b99eaf03-5075-47a5-8d74-1215a2082cab/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.306" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.306" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/b99eaf03-5075-47a5-8d74-1215a2082cab/value {"text": "secret_sauce", "value": ["s", "e", "c", "r", "e", "t", "_", "s", "a", "u", "c", "e"], "id": "b99eaf03-5075-47a5-8d74-1215a2082cab"}</msg>
+<msg timestamp="20200813 00:08:53.387" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/b99eaf03-5075-47a5-8d74-1215a2082cab/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.387" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.387" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.230" endtime="20200813 00:08:53.387"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.387" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.230" endtime="20200813 00:08:53.387"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.387" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.230" endtime="20200813 00:08:53.387"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.388" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:08:53.388" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.389" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:08:53.389" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:08:53.389" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:53.399" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:53.399" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.399" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:08:53.399" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "b99eaf03-5075-47a5-8d74-1215a2082cab"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:08:53.724" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.726" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.726" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.388" endtime="20200813 00:08:53.727"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.728" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.388" endtime="20200813 00:08:53.728"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.729" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.388" endtime="20200813 00:08:53.730"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.732" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.732" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'secret_sauce',
+ 'Username and password do not match any user in this service'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.736" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.736" level="TRACE">Arguments: [ 'Username and password do not match any user in this service' ]</msg>
+<msg timestamp="20200813 00:08:53.736" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match any user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:53.767" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 643</msg>
+<msg timestamp="20200813 00:08:53.767" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.736" endtime="20200813 00:08:53.767"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.732" endtime="20200813 00:08:53.767"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.767" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:08:53.767" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:08:53.767" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:08:53.879" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.879" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.880" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.767" endtime="20200813 00:08:53.880"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.880" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.732" endtime="20200813 00:08:53.880"></status>
+</kw>
+<msg timestamp="20200813 00:08:53.880" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.731" endtime="20200813 00:08:53.880"></status>
+</kw>
+<status status="PASS" starttime="20200813 00:08:53.063" endtime="20200813 00:08:53.880"></status>
+</kw>
+<kw name="${item} = ['hellouser', 'hellopasswd', 'Username and password do not match ay user in this service']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.881" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.882" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'hellopasswd',
+ 'Username and password do not match ay user in this service'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:53.882" level="TRACE">Arguments: [ 'id=user-name' | 'hellouser' ]</msg>
+<msg timestamp="20200813 00:08:53.882" level="INFO">Typing text 'hellouser' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:08:53.883" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:08:53.897" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:53.898" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.898" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/bb543bd5-1e63-4e35-8ca7-8fddb42c23dc/clear {"id": "bb543bd5-1e63-4e35-8ca7-8fddb42c23dc"}</msg>
+<msg timestamp="20200813 00:08:53.951" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/bb543bd5-1e63-4e35-8ca7-8fddb42c23dc/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:53.951" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:53.951" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/bb543bd5-1e63-4e35-8ca7-8fddb42c23dc/value {"text": "hellouser", "value": ["h", "e", "l", "l", "o", "u", "s", "e", "r"], "id": "bb543bd5-1e63-4e35-8ca7-8fddb42c23dc"}</msg>
+<msg timestamp="20200813 00:08:54.038" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/bb543bd5-1e63-4e35-8ca7-8fddb42c23dc/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:54.038" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.882" endtime="20200813 00:08:54.038"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.881" endtime="20200813 00:08:54.038"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:53.880" endtime="20200813 00:08:54.038"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'hellopasswd',
+ 'Username and password do not match ay user in this service'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.038" level="TRACE">Arguments: [ 'id=password' | 'hellopasswd' ]</msg>
+<msg timestamp="20200813 00:08:54.038" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:08:54.038" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:54.054" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:54.055" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.055" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/8e84096b-40b7-4d7d-806b-34890c00d124/clear {"id": "8e84096b-40b7-4d7d-806b-34890c00d124"}</msg>
+<msg timestamp="20200813 00:08:54.112" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/8e84096b-40b7-4d7d-806b-34890c00d124/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:54.112" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.112" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/8e84096b-40b7-4d7d-806b-34890c00d124/value {"text": "hellopasswd", "value": ["h", "e", "l", "l", "o", "p", "a", "s", "s", "w", "d"], "id": "8e84096b-40b7-4d7d-806b-34890c00d124"}</msg>
+<msg timestamp="20200813 00:08:54.185" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/8e84096b-40b7-4d7d-806b-34890c00d124/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:54.185" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.185" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.038" endtime="20200813 00:08:54.185"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.185" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.038" endtime="20200813 00:08:54.185"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.185" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.038" endtime="20200813 00:08:54.185"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.186" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:08:54.186" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.186" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:08:54.186" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:08:54.186" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:08:54.201" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:08:54.201" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.201" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:08:54.203" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "8e84096b-40b7-4d7d-806b-34890c00d124"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:08:54.534" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:08:54.538" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.539" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.186" endtime="20200813 00:08:54.539"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.539" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.186" endtime="20200813 00:08:54.539"></status>
+</kw>
+<msg timestamp="20200813 00:08:54.539" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:08:54.186" endtime="20200813 00:08:54.539"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.543" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.547" level="TRACE">Arguments: [ ${user_login_data}=['hellouser',
+ 'hellopasswd',
+ 'Username and password do not match ay user in this service'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.550" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:08:54.552" level="TRACE">Arguments: [ 'Username and password do not match ay user in this service' ]</msg>
+<msg timestamp="20200813 00:08:54.553" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:54.579" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:54.579" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:54.784" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:54.809" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:54.809" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:55.022" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:55.032" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:55.033" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:55.242" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:55.268" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:55.268" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:55.474" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:55.486" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:55.486" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:55.690" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:55.705" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:55.706" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:55.909" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:55.927" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:55.927" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:56.138" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:56.151" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:56.152" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:56.355" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:56.382" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:56.383" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:56.594" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:56.616" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:56.617" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:56.831" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:56.858" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:56.859" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:57.065" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:57.098" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:57.099" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:57.309" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:57.317" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:57.317" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:57.531" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:57.538" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:57.538" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:57.749" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:57.757" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:57.757" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:57.971" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:57.978" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:57.979" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:58.182" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:58.190" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:58.190" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:58.401" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:58.408" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:58.409" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:58.623" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:58.631" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:58.632" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:58.848" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:58.856" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:58.857" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:59.069" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:59.076" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:59.077" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:59.287" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:59.294" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:59.294" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:08:59.499" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username and password do not match ay user in this service')]"}</msg>
+<msg timestamp="20200813 00:08:59.505" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20200813 00:08:59.505" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20200813 00:08:59.712" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20200813 00:08:59.712" level="DEBUG">GET http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/screenshot {}</msg>
+<msg timestamp="20200813 00:09:00.118" level="DEBUG">http://127.0.0.1:54696 "GET /session/e174ed4aa56c4770147458c36d21ebdc/screenshot HTTP/1.1" 200 175028</msg>
+<msg timestamp="20200813 00:09:00.125" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.127" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20200813 00:09:00.127" level="TRACE">Return: 'C:\\deveopment\\robot-scripts\\DDCSV\\results\\robot-report-csv\\selenium-screenshot-16.png'</msg>
+<status status="PASS" starttime="20200813 00:08:59.712" endtime="20200813 00:09:00.127"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.127" level="FAIL">Text 'Username and password do not match ay user in this service' did not appear in 5 seconds.</msg>
+<msg timestamp="20200813 00:09:00.127" level="DEBUG">Traceback (most recent call last):
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\__init__.py", line 372, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\base\robotlibcore.py", line 102, in run_keyword
+    return self.keywords[name](*args, **kwargs)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\waiting.py", line 68, in wait_until_page_contains
+    timeout, error)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\waiting.py", line 222, in _wait_until
+    self._wait_until_worker(condition, timeout, error)
+  File "c:\anaconda\lib\site-packages\SeleniumLibrary\keywords\waiting.py", line 239, in _wait_until_worker
+    raise AssertionError(not_found or error)</msg>
+<status status="FAIL" starttime="20200813 00:08:54.550" endtime="20200813 00:09:00.127"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.127" level="TRACE">Return: None</msg>
+<status status="FAIL" starttime="20200813 00:08:54.549" endtime="20200813 00:09:00.127"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.127" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:09:00.130" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:09:00.130" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:09:00.237" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.237" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.237" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.127" endtime="20200813 00:09:00.237"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.238" level="TRACE">Return: None</msg>
+<status status="FAIL" starttime="20200813 00:08:54.543" endtime="20200813 00:09:00.238"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.238" level="TRACE">Return: None</msg>
+<status status="FAIL" starttime="20200813 00:08:54.543" endtime="20200813 00:09:00.238"></status>
+</kw>
+<status status="FAIL" starttime="20200813 00:08:53.880" endtime="20200813 00:09:00.238"></status>
+</kw>
+<kw name="${item} = ['', 'secret_sauce', 'Username is required']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.239" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.240" level="TRACE">Arguments: [ ${user_login_data}=['', 'secret_sauce', 'Username is required'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.240" level="TRACE">Arguments: [ 'id=user-name' | '' ]</msg>
+<msg timestamp="20200813 00:09:00.241" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:09:00.241" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:09:00.261" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:00.261" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.261" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/cbe4fc04-e243-400b-9b7f-cf39cdd33e5b/clear {"id": "cbe4fc04-e243-400b-9b7f-cf39cdd33e5b"}</msg>
+<msg timestamp="20200813 00:09:00.314" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/cbe4fc04-e243-400b-9b7f-cf39cdd33e5b/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.314" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.315" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/cbe4fc04-e243-400b-9b7f-cf39cdd33e5b/value {"text": "", "value": [], "id": "cbe4fc04-e243-400b-9b7f-cf39cdd33e5b"}</msg>
+<msg timestamp="20200813 00:09:00.360" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/cbe4fc04-e243-400b-9b7f-cf39cdd33e5b/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.361" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.361" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.240" endtime="20200813 00:09:00.361"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.361" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.239" endtime="20200813 00:09:00.361"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.362" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.239" endtime="20200813 00:09:00.362"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.362" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.362" level="TRACE">Arguments: [ ${user_login_data}=['', 'secret_sauce', 'Username is required'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.363" level="TRACE">Arguments: [ 'id=password' | 'secret_sauce' ]</msg>
+<msg timestamp="20200813 00:09:00.363" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:09:00.364" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:00.373" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:00.374" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.374" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/a422ecd5-36ed-47d6-ba53-d3d5a2286494/clear {"id": "a422ecd5-36ed-47d6-ba53-d3d5a2286494"}</msg>
+<msg timestamp="20200813 00:09:00.411" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/a422ecd5-36ed-47d6-ba53-d3d5a2286494/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.411" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.411" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/a422ecd5-36ed-47d6-ba53-d3d5a2286494/value {"text": "secret_sauce", "value": ["s", "e", "c", "r", "e", "t", "_", "s", "a", "u", "c", "e"], "id": "a422ecd5-36ed-47d6-ba53-d3d5a2286494"}</msg>
+<msg timestamp="20200813 00:09:00.485" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/a422ecd5-36ed-47d6-ba53-d3d5a2286494/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.486" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.363" endtime="20200813 00:09:00.486"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.362" endtime="20200813 00:09:00.486"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.362" endtime="20200813 00:09:00.486"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.486" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:09:00.486" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:09:00.486" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:00.502" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:00.502" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.503" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:09:00.503" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "a422ecd5-36ed-47d6-ba53-d3d5a2286494"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:09:00.790" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.790" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.790" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.486" endtime="20200813 00:09:00.790"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.790" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.486" endtime="20200813 00:09:00.790"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.790" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.486" endtime="20200813 00:09:00.790"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.790" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.793" level="TRACE">Arguments: [ ${user_login_data}=['', 'secret_sauce', 'Username is required'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.793" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.793" level="TRACE">Arguments: [ 'Username is required' ]</msg>
+<msg timestamp="20200813 00:09:00.794" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username is required')]"}</msg>
+<msg timestamp="20200813 00:09:00.805" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 643</msg>
+<msg timestamp="20200813 00:09:00.806" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.806" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.793" endtime="20200813 00:09:00.806"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.806" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.793" endtime="20200813 00:09:00.806"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.807" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:09:00.808" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:09:00.808" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:09:00.895" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.896" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.896" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.807" endtime="20200813 00:09:00.896"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.897" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.790" endtime="20200813 00:09:00.897"></status>
+</kw>
+<msg timestamp="20200813 00:09:00.897" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.790" endtime="20200813 00:09:00.897"></status>
+</kw>
+<status status="PASS" starttime="20200813 00:09:00.238" endtime="20200813 00:09:00.898"></status>
+</kw>
+<kw name="${item} = ['standard_user', '', 'Password is required']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.899" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.900" level="TRACE">Arguments: [ ${user_login_data}=['standard_user', '', 'Password is required'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:00.901" level="TRACE">Arguments: [ 'id=user-name' | 'standard_user' ]</msg>
+<msg timestamp="20200813 00:09:00.901" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:09:00.901" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:09:00.917" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:00.918" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.918" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/788ba503-d113-4501-9b9d-99f7089adf7f/clear {"id": "788ba503-d113-4501-9b9d-99f7089adf7f"}</msg>
+<msg timestamp="20200813 00:09:00.965" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/788ba503-d113-4501-9b9d-99f7089adf7f/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:00.966" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:00.966" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/788ba503-d113-4501-9b9d-99f7089adf7f/value {"text": "standard_user", "value": ["s", "t", "a", "n", "d", "a", "r", "d", "_", "u", "s", "e", "r"], "id": "788ba503-d113-4501-9b9d-99f7089adf7f"}</msg>
+<msg timestamp="20200813 00:09:01.052" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/788ba503-d113-4501-9b9d-99f7089adf7f/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.052" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.052" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.901" endtime="20200813 00:09:01.052"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.052" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.900" endtime="20200813 00:09:01.052"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.052" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:00.898" endtime="20200813 00:09:01.052"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.053" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.053" level="TRACE">Arguments: [ ${user_login_data}=['standard_user', '', 'Password is required'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.053" level="TRACE">Arguments: [ 'id=password' | '' ]</msg>
+<msg timestamp="20200813 00:09:01.053" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:09:01.053" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:01.061" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:01.061" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.061" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/5c176ab4-7cb4-4478-809b-b120846918e0/clear {"id": "5c176ab4-7cb4-4478-809b-b120846918e0"}</msg>
+<msg timestamp="20200813 00:09:01.116" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/5c176ab4-7cb4-4478-809b-b120846918e0/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.116" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.117" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/5c176ab4-7cb4-4478-809b-b120846918e0/value {"text": "", "value": [], "id": "5c176ab4-7cb4-4478-809b-b120846918e0"}</msg>
+<msg timestamp="20200813 00:09:01.163" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/5c176ab4-7cb4-4478-809b-b120846918e0/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.164" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.164" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.053" endtime="20200813 00:09:01.164"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.164" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.053" endtime="20200813 00:09:01.164"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.164" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.053" endtime="20200813 00:09:01.164"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.165" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:09:01.165" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.165" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:09:01.166" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:09:01.166" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:01.173" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:01.173" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.173" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:09:01.174" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "5c176ab4-7cb4-4478-809b-b120846918e0"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:09:01.459" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.459" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.460" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.165" endtime="20200813 00:09:01.460"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.460" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.165" endtime="20200813 00:09:01.460"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.460" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.164" endtime="20200813 00:09:01.460"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.461" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.462" level="TRACE">Arguments: [ ${user_login_data}=['standard_user', '', 'Password is required'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.463" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.463" level="TRACE">Arguments: [ 'Password is required' ]</msg>
+<msg timestamp="20200813 00:09:01.463" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Password is required')]"}</msg>
+<msg timestamp="20200813 00:09:01.479" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 643</msg>
+<msg timestamp="20200813 00:09:01.479" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.480" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.463" endtime="20200813 00:09:01.480"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.480" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.462" endtime="20200813 00:09:01.480"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.481" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:09:01.481" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:09:01.481" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:09:01.568" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.568" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.568" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.480" endtime="20200813 00:09:01.569"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.569" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.461" endtime="20200813 00:09:01.569"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.570" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.460" endtime="20200813 00:09:01.570"></status>
+</kw>
+<status status="PASS" starttime="20200813 00:09:00.898" endtime="20200813 00:09:01.570"></status>
+</kw>
+<kw name="${item} = ['', '', 'Username is required']" type="foritem">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Username For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.571" level="TRACE">Arguments: [ 'Enter Username For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Username For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.574" level="TRACE">Arguments: [ ${user_login_data}=['', '', 'Username is required'] ]</msg>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_USERNAME_FIELD}</arg>
+<arg>${user_login_data[0]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.576" level="TRACE">Arguments: [ 'id=user-name' | '' ]</msg>
+<msg timestamp="20200813 00:09:01.576" level="INFO">Typing text '' into text field 'id=user-name'.</msg>
+<msg timestamp="20200813 00:09:01.576" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"user-name\"]"}</msg>
+<msg timestamp="20200813 00:09:01.587" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:01.587" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.587" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/32aa32c3-2bec-41d9-a601-6b82702848d1/clear {"id": "32aa32c3-2bec-41d9-a601-6b82702848d1"}</msg>
+<msg timestamp="20200813 00:09:01.635" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/32aa32c3-2bec-41d9-a601-6b82702848d1/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.635" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.635" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/32aa32c3-2bec-41d9-a601-6b82702848d1/value {"text": "", "value": [], "id": "32aa32c3-2bec-41d9-a601-6b82702848d1"}</msg>
+<msg timestamp="20200813 00:09:01.678" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/32aa32c3-2bec-41d9-a601-6b82702848d1/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.678" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.678" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.574" endtime="20200813 00:09:01.678"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.678" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.572" endtime="20200813 00:09:01.678"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.678" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.571" endtime="20200813 00:09:01.678"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Enter Password For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.678" level="TRACE">Arguments: [ 'Enter Password For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Enter Password For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.680" level="TRACE">Arguments: [ ${user_login_data}=['', '', 'Username is required'] ]</msg>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${user_login_data[1]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.681" level="TRACE">Arguments: [ 'id=password' | '' ]</msg>
+<msg timestamp="20200813 00:09:01.683" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20200813 00:09:01.683" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:01.690" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:01.690" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.690" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/e998215a-24ce-4c2a-a520-ffd5d2adb545/clear {"id": "e998215a-24ce-4c2a-a520-ffd5d2adb545"}</msg>
+<msg timestamp="20200813 00:09:01.722" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/e998215a-24ce-4c2a-a520-ffd5d2adb545/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.722" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.722" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/element/e998215a-24ce-4c2a-a520-ffd5d2adb545/value {"text": "", "value": [], "id": "e998215a-24ce-4c2a-a520-ffd5d2adb545"}</msg>
+<msg timestamp="20200813 00:09:01.767" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/element/e998215a-24ce-4c2a-a520-ffd5d2adb545/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:01.767" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.681" endtime="20200813 00:09:01.767"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.678" endtime="20200813 00:09:01.767"></status>
+</kw>
+<msg timestamp="20200813 00:09:01.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.678" endtime="20200813 00:09:01.767"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Submit Login Form With Credentials</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.768" level="TRACE">Arguments: [ 'Submit Login Form With Credentials' ]</msg>
+<kw name="Submit Login Form With Credentials" library="Login">
+<msg timestamp="20200813 00:09:01.768" level="TRACE">Arguments: [  ]</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20200813 00:09:01.768" level="TRACE">Arguments: [ 'id=password' | 'RETURN' ]</msg>
+<msg timestamp="20200813 00:09:01.768" level="INFO">Sending key(s) ('RETURN',) to id=password element.</msg>
+<msg timestamp="20200813 00:09:01.768" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "css selector", "value": "[id=\"password\"]"}</msg>
+<msg timestamp="20200813 00:09:01.776" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20200813 00:09:01.777" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:01.777" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20200813 00:09:01.777" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/actions {"actions": [{"type": "pointer", "parameters": {"pointerType": "mouse"}, "id": "mouse", "actions": [{"type": "pointerMove", "duration": 250, "x": 0, "y": 0, "origin": {"element-6066-11e4-a52e-4f735466cecf": "e998215a-24ce-4c2a-a520-ffd5d2adb545"}}, {"type": "pointerDown", "duration": 0, "button": 0}, {"type": "pointerUp", "duration": 0, "button": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}]}, {"type": "key", "id": "key", "actions": [{"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "pause", "duration": 0}, {"type": "keyDown", "value": "\ue006"}, {"type": "keyUp", "value": "\ue006"}]}]}</msg>
+<msg timestamp="20200813 00:09:02.053" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/actions HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:02.053" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:02.053" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.768" endtime="20200813 00:09:02.054"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.054" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.768" endtime="20200813 00:09:02.054"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.054" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:01.768" endtime="20200813 00:09:02.054"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait For Error Message On Login Page For Invalid Logincheck</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:02.054" level="TRACE">Arguments: [ 'Wait For Error Message On Login Page For Invalid Logincheck' | '${item}' ]</msg>
+<kw name="Wait For Error Message On Login Page For Invalid Logincheck" library="Login">
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:02.055" level="TRACE">Arguments: [ ${user_login_data}=['', '', 'Username is required'] ]</msg>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Wait Until Page Contains</arg>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:02.055" level="TRACE">Arguments: [ 'Wait Until Page Contains' | '${user_login_data[2]}' ]</msg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${user_login_data[2]}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:02.056" level="TRACE">Arguments: [ 'Username is required' ]</msg>
+<msg timestamp="20200813 00:09:02.057" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/elements {"using": "xpath", "value": "//*[contains(., 'Username is required')]"}</msg>
+<msg timestamp="20200813 00:09:02.065" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/elements HTTP/1.1" 200 643</msg>
+<msg timestamp="20200813 00:09:02.065" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:02.066" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.056" endtime="20200813 00:09:02.066"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.066" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.055" endtime="20200813 00:09:02.066"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${ENV_URLS.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200813 00:09:02.066" level="TRACE">Arguments: [ 'http://www.saucedemo.com' ]</msg>
+<msg timestamp="20200813 00:09:02.066" level="INFO">Opening url 'http://www.saucedemo.com'</msg>
+<msg timestamp="20200813 00:09:02.066" level="DEBUG">POST http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc/url {"url": "http://www.saucedemo.com"}</msg>
+<msg timestamp="20200813 00:09:02.152" level="DEBUG">http://127.0.0.1:54696 "POST /session/e174ed4aa56c4770147458c36d21ebdc/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:02.154" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:02.154" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.066" endtime="20200813 00:09:02.154"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.154" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.055" endtime="20200813 00:09:02.154"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.154" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.054" endtime="20200813 00:09:02.155"></status>
+</kw>
+<status status="PASS" starttime="20200813 00:09:01.570" endtime="20200813 00:09:02.155"></status>
+</kw>
+<status status="FAIL" starttime="20200813 00:08:52.268" endtime="20200813 00:09:02.155"></status>
+</kw>
+<msg timestamp="20200813 00:09:02.155" level="TRACE">Return: None</msg>
+<status status="FAIL" starttime="20200813 00:08:52.268" endtime="20200813 00:09:02.156"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<msg timestamp="20200813 00:09:02.158" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20200813 00:09:02.158" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20200813 00:09:02.159" level="DEBUG">Closing browser with session id e174ed4aa56c4770147458c36d21ebdc.</msg>
+<msg timestamp="20200813 00:09:02.159" level="DEBUG">DELETE http://127.0.0.1:54696/session/e174ed4aa56c4770147458c36d21ebdc {}</msg>
+<msg timestamp="20200813 00:09:02.283" level="DEBUG">http://127.0.0.1:54696 "DELETE /session/e174ed4aa56c4770147458c36d21ebdc HTTP/1.1" 200 14</msg>
+<msg timestamp="20200813 00:09:02.285" level="DEBUG">Finished Request</msg>
+<msg timestamp="20200813 00:09:04.422" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.158" endtime="20200813 00:09:04.423"></status>
+</kw>
+<msg timestamp="20200813 00:09:04.423" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:02.158" endtime="20200813 00:09:04.423"></status>
+</kw>
+<doc>Verification of Negative Testing Scenario For Login</doc>
+<tags>
+<tag>NegativeScenarios</tag>
+</tags>
+<status status="FAIL" starttime="20200813 00:08:45.595" endtime="20200813 00:09:04.424" critical="yes">Text 'Username and password do not match ay user in this service' did not appear in 5 seconds.</status>
+</test>
+<kw name="Generate Allure Report" library="Common" type="teardown">
+<msg timestamp="20200813 00:09:04.432" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>allure generate results/allure-results -o results/allure-report</arg>
+</arguments>
+<msg timestamp="20200813 00:09:04.432" level="TRACE">Arguments: [ 'allure generate results/allure-results -o results/allure-report' ]</msg>
+<msg timestamp="20200813 00:09:04.447" level="INFO">Running command 'allure generate results/allure-results -o results/allure-report 2&gt;&amp;1'.</msg>
+<msg timestamp="20200813 00:09:04.880" level="TRACE">Return: "Allure: Target directory C:\\deveopment\\robot-scripts\\DDCSV\\results\\allure-report for the report is already in use, add a '--clean' option to overwrite"</msg>
+<status status="PASS" starttime="20200813 00:09:04.432" endtime="20200813 00:09:04.880"></status>
+</kw>
+<kw name="Copy Files" library="OperatingSystem">
+<doc>Copies specified files to the target directory.</doc>
+<arguments>
+<arg>results/robot-report/*.png</arg>
+<arg>results/allure-report/data/attachments</arg>
+</arguments>
+<msg timestamp="20200813 00:09:04.880" level="TRACE">Arguments: [ 'results/robot-report/*.png' | 'results/allure-report/data/attachments' ]</msg>
+<msg timestamp="20200813 00:09:04.881" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:04.880" endtime="20200813 00:09:04.881"></status>
+</kw>
+<msg timestamp="20200813 00:09:04.881" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200813 00:09:04.432" endtime="20200813 00:09:04.881"></status>
+</kw>
+<doc>Saucedemo e-commerce application automation</doc>
+<status status="FAIL" starttime="20200813 00:08:45.293" endtime="20200813 00:09:04.881"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">NegativeScenarios</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="DataDrivenTestBasedOnDataFromCSV">DataDrivenTestBasedOnDataFromCSV</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200813 00:08:45.561" level="ERROR">Error in file 'C:\deveopment\robot-scripts\DDCSV\Resources\PO\Login.robot': Resource file '..\Data\InputData.robot' does not exist.</msg>
+</errors>
+</robot>

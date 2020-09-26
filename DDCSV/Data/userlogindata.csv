@@ -1,0 +1,7 @@
+username,password,error_msg
+standard_user,hellopassword,Username and password do not match any user in this service
+hellouser,secret_sauce,Username and password do not match any user in this service
+hellouser,hellopasswd,Username and password do not match ay user in this service
+,secret_sauce,Username is required
+standard_user,,Password is required
+,,Username is required

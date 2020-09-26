@@ -1,0 +1,61 @@
+[ {
+  "uid" : "8fe35e9f01eeebb3",
+  "name" : "Verify An Invalid User Is Not Able To Login",
+  "time" : {
+    "start" : 1597001468368,
+    "stop" : 1597001478740,
+    "duration" : 10372
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d44fefe65faebf12",
+  "name" : "Verify E2E Product Order Flow For A Valid User",
+  "time" : {
+    "start" : 1597001455076,
+    "stop" : 1597001467129,
+    "duration" : 12053
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "b29f80fcc8b61955",
+  "name" : "Verify E2E Product Order Flow For A Valid User",
+  "time" : {
+    "start" : 1597001437055,
+    "stop" : 1597001455052,
+    "duration" : 17997
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "efb98c843a9a09ec",
+  "name" : "TEST CASE2",
+  "time" : {
+    "start" : 1597001436763,
+    "stop" : 1597001436781,
+    "duration" : 18
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "48974b2d2ce37848",
+  "name" : "Verify E2E Product Order Flow For A Valid User",
+  "time" : {
+    "start" : 1597001478745,
+    "stop" : 1597001495592,
+    "duration" : 16847
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "db7f6f5e31e1b5f4",
+  "name" : "TEST CASE1",
+  "time" : {
+    "start" : 1597001436744,
+    "stop" : 1597001436758,
+    "duration" : 14
+  },
+  "status" : "passed",
+  "severity" : "critical"
+} ]
